@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <div class="user-card">
+        <div class="card-head">
+            <div class="badge">{{user.username | slice:1}}</div>
+            <p>{{user.username}}</p>
+        </div>
+        <div class="card-body">
+            <p> Votre email actuel : {{ user.email }}</p> 
+        </div>
+        <div class="card-footer">
+            <form action="">
+                <button type submit>Se deconnecter</button>
+            </form>
+            <a href="">Modifier vos informations</a>
+        </div>
+    </div>
+</body>
+</html>

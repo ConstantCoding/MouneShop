@@ -1,0 +1,966 @@
+*{
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Bauhaus 93';
+    src: url('../fonts/BAUHS93.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+/* ENTETE ET NAVBAR*/
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(128, 128, 128,0.1);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.navbar .header-logo{
+    margin-left: -50px;
+}
+.actions{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-top: 12px;
+}
+.actions a{
+    color: black;
+    font-weight: 550;
+    font-family: arial;
+    font-size: 15px;
+}
+.navbar{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    z-index: 200;
+    top: 47px;
+    width: 100%;
+    background-color:white;
+    box-shadow: 0 5px 6px rgba(128, 128, 128, 0.1);
+}
+
+.nav-end{ 
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;  
+}
+.search{display: flex;}
+.nav-end .search input{
+    width: 200px;
+    height: 38px;
+    padding: 0 35px;
+    border-radius: 30px;
+    border-color: rgba(128, 128, 128, 0.1);
+    border: none;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+.nav-end .search input::placeholder{
+    color: rgba(128, 128, 128, 1);
+    position: relative;
+    left: 10px;
+    font-size: 18px;
+}
+.navbar .nav-end{
+    margin-right: 80px;
+    margin-top:17px;
+}
+
+.nav-end .end-icon .red-disc,
+.responsive-icons .red-disc {
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 34px;
+    right: 55px;
+}
+
+.nav-end .end-icon{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;  
+}
+.nav-end .end-icon img{
+    margin-left:40px;
+    margin-top: 3%;
+}
+.nav-end .end-icon #compte{
+    position: relative;
+    left: 10%;
+}
+
+.nav-end .end-icon #sac .box{
+    position: absolute;
+    right: 90px;
+    width: 100px;
+    height: 120px;
+    background-color: #ccc8c8;
+    border-radius: 3px;
+    z-index: 2000;
+    display: none;
+}
+.nav-end .end-icon #sac .box::before{
+    position: absolute;
+    left: 79px;
+    top: -7px;
+    content: "";
+    height: 18px;
+    width: 18px;
+    background-color: #ccc8c8;
+    transform: rotate(50deg);
+}
+.nav-end .end-icon #sac .box p{
+    color: black;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 10px;
+}
+.nav-end .end-icon #sac .box p:last-child{
+    font-style: italic;
+}
+
+.nav-end .search{
+    position: relative;
+    left: 10%;
+}
+.nav-end .search img{
+    position: absolute;
+    top: 12%;
+    left: 3%;  
+}
+.header-container .title{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.navbar .items{
+    /*background-color: red;*/
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    font-size: 18px;
+    font-family: "helvetica";
+    font-weight: bolder;
+    width: 40%;
+    margin-top: 5px;
+    margin-left: 35px;
+}
+.navbar .items a{color: black;}
+
+.header-container .title,.navbar .title{
+    margin-top: -2px;
+    font-size: 40px;
+    font-weight: bolder;
+    text-decoration:underline;
+}
+.header-container .moune,.header-container .shop,.navbar .moune,.navbar .shop{
+    font-size: 30px;
+    font-variant: small-caps;
+}
+.h-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 160px;
+    font-family: Arial;
+}
+.navbar .responsive-icons img{
+    width: 40px;
+}
+.navbar .title,.navbar .responsive-icons{display: none;}
+.navbar .banner{
+    display: none;
+}
+/* ENTETE ET NAVBAR*/
+
+/* Landing page */
+.title{
+    margin-top: 150px;
+    text-align: center;
+    font-family: Arial;
+}
+.landing{
+    margin-top: 40px;
+    display: flex;
+}
+.landing img{
+    width: 50%;
+    height: 512px;
+}
+.acc-text .p1{
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: center;
+}
+.acc-text .p2{
+    font-size: 63px;
+    font-family:"Bauhaus 93";
+    text-align: center;
+}
+.acc-text .btq{
+    position:relative;
+    left: 46%;
+    height: 40px;
+    width: 110px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    border:none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* Landing page */
+
+/* Trending */
+.trending{
+    margin-top: 60px;
+}
+.trending h3{
+    margin-left: 30px;
+    font-family: Arial;
+    font-weight: bolder;
+    font-size: 23px;
+}
+.t-img-container{
+    display: flex;
+    width: 100%;
+    margin-top: 20px;
+}
+.t-cont1,.t-cont2{
+    width: 50%;
+}
+.t-img-container img{
+    height: 600px;
+    width: 100%;
+}
+
+.t-cont1 .p1,.t-cont2 .p1{
+    margin-top: -200px;
+    margin-left: 40px;
+    color: white;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bolder;
+}
+.t-cont1 .p2, .t-cont2 .p2{
+    color: white;
+    font-size: 22px;
+    font-family: Arial;
+    margin-top: 15px;
+}
+.t-cont1 .p2, .t-cont1 .btq,.t-cont2 .p2, .t-cont2 .btq{
+    margin-left: 40px;
+}
+.t-cont1 .btq,.t-cont2 .btq, .p-car-container .btq{
+    margin-top: 15px;
+    height: 40px;
+    width: 110px;
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    border:none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* Trending */
+
+/* Carroussel Classique */
+.carrousel .bt{
+    margin-top: 120px;
+    margin-left: 45px;
+    text-transform: uppercase;
+    font-family: "Bauhaus 93";
+    font-size: 46px;
+}
+.gallery-wrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.gallery-wrap button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#backBtn {
+    position: absolute;
+    left: 10px;
+}
+
+#nextBtn {
+    position: absolute;
+    right: 10px;
+}
+
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 5px;
+    width: 100%;
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    flex: 0 0 25%;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background: #000;
+    border-radius: 10px;
+}
+
+.card p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bolder;
+    text-decoration: none;
+    position: relative;
+    bottom: 18%;
+}
+/* Carrousel classique *
+
+/* section par age */
+.per-age{
+    margin-top: 120px;
+}
+.p-car-header{
+    display: flex;
+    justify-content: space-between;
+}
+.p-car-header h3{
+    margin: 16px 0 0 40px;
+    font-family: Arial;
+    font-size: 1.5em;
+}
+.car-btn{
+    margin-right: 20px;
+}
+.car-btn button{
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.car-btn button:hover{
+    background-color: rgb(221, 213, 213);
+}
+.car-btn button:first-child{
+    margin-right: 10px;
+}
+.car-btn button img{
+    width: 25px;
+    position: relative;
+    top: 3px;
+}
+.p-car-container{
+    margin-top: 10px;
+    margin-left: 40px;
+}
+.p-card{
+    width: 500px;
+    height: 500px;
+    margin-left: -30px;
+}
+.p-card img{
+    width: 100%;
+    height: 500px;
+    z-index: 1;
+}
+.p-card p{
+    font-size: 26px;
+    color:white;
+    font-family: Arial;
+    margin-top: 10px;
+}
+.p-card p,.p-card button{
+    position: relative;
+    bottom: 150px;
+    margin-left: 30px;
+}
+.p-wrapper{
+    display: flex;
+    overflow: hidden;
+}
+/* Section par age */
+/* Populaire en ce moment */
+.t-carroussel{
+    margin-top: 120px;
+}
+.t-car-header{
+    display: flex;
+    justify-content: space-between;
+}
+.t-car-header h3{
+    margin: 16px 0 0 40px;
+    font-family: Arial;
+    font-size: 1.5em;
+}
+.car-btn{
+    margin-right: 20px;
+}
+.car-btn button{
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.car-btn button:hover{
+    background-color: rgb(221, 213, 213);
+}
+.car-btn button:first-child{
+    margin-right: 10px;
+}
+.car-btn button img{
+    width: 25px;
+    position: relative;
+    top: 3px;
+}
+.t-car-container{
+    margin-top: 10px;
+    margin-left: 40px;
+}
+.t-card{
+    width: 500px;
+    height: 500px;
+    margin-left: -30px;
+}
+.t-card img{
+    width: 100%;
+    height: 500px;
+    z-index: 1;
+}
+.t-card p{
+    font-size: 26px;
+    color:white;
+    font-family: Arial;
+    margin-top: 10px;
+}
+.t-card p,.w-card button{
+    position: relative;
+    bottom: 150px;
+    margin-left: 30px;
+}
+.t-wrapper{
+    display: flex;
+    overflow: hidden;
+}
+.t-card .btq,.ex-container button{
+    height: 40px;
+    width: 110px;
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    border:none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+.t-car-container h3{
+    font-family: Arial;
+    margin-top: 10px;
+    margin-left: -5%;
+}
+.t-car-container .price{
+    margin-left: -5%;
+    font-weight: bolder;
+    transition: .3s;
+    font-size: 18px;
+    margin-top: 10px;
+}
+.t-car-container .price:hover{
+    letter-spacing: 5px;
+}
+/* Populaire en ce moment */
+/*PIED DE PAGE*/
+.footer-logo{
+    display: flex;
+    justify-content: center;
+}
+.footer-logo img{
+    margin-top: 70px;
+    width: 180px;
+}
+.footer-container .items{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    width: 46%;
+    position: relative;
+    left:30%;
+}
+.footer-container .items a{
+    color: black;
+    font-weight: 550;
+    font-family: arial;
+    font-size: 18px;
+}
+footer p{
+    margin-top: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 18px;
+    font: arial;
+}
+/*PIED DE PAGE*/
+@media screen and (max-width:1180px){
+    header{display: none;}
+    .navbar{
+        position: relative;
+        top: 0;
+        height: 100px;
+    }
+    .navbar .items,.navbar .nav-end{
+        display: none;
+    }
+    .navbar .title{
+        display: block;
+        position: relative;
+        right: 20%;
+        top: 55px;
+    }
+    .navbar .responsive-icons{
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        gap: 8%;
+    }
+    .navbar .responsive-icons img{margin-top: 25px;}
+    .title{
+        margin-top: 50px;
+    }
+    /*Bannière responsive */
+    .navbar .banner{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #fff;
+        margin-right: -60%;   
+    }
+    .navbar .banner.ban-responsive{
+        display: flex;
+        margin-right: -60%;
+        animation: appear 0.6s forwards ease;
+    }
+    @keyframes appear{
+        to{
+            margin-right: 0;
+        }
+    }
+    .navbar .banner a{
+        color: black;
+        font-size: 1.5em;
+        font-weight: 500;
+        font-family: Arial;
+        margin-top: 15px;
+        padding-left: 20px;
+    }
+    .navbar .ban-head{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navbar .banner img{
+        width: 30px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .responsive-icons .red-disc {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        bottom: 46px;
+        left: 4px;
+    }
+    /*Bannière responsive */
+    .card{
+        flex: 0 0 30%;
+    }
+    /* Pied de page */
+    .footer-container .items{
+        width: 55%;
+        left: 28%;
+    }
+    /* Pied de page */
+}
+@media screen and (max-width:940px){
+    /* Navbar responsive */
+    .navbar .responsive-icons img{
+        width: 35px;
+        margin-top: 30px;
+        position: relative;
+        right: 25px;
+    }
+    .navbar{
+        height: 80px;
+    }
+    .navbar .title{
+        position: relative;
+        top: 48px;
+    }
+    .navbar .header-logo img{
+        width: 150px;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 26px;
+    }
+    .responsive-icons .red-disc{
+        left: -24px;
+        bottom: 38px;
+    }
+    /* Navbar responsive */
+    .t-img-container img{
+        height: 450px;
+    }
+    .per-age{
+        margin-top: 40px;
+    }
+    .t-carroussel{
+        margin-top: 40px;
+    }
+}
+@media screen and (max-width:900px){
+    .footer-container .items{
+        width: 60%;
+        left: 26%;
+    }
+}
+@media screen and (max-width:850px){
+    .footer-container .items{
+        width: 70%;
+        left: 24%;
+    }
+    .landing img{
+        height: 450px;
+    }
+    .card{
+        flex: 0 0 35%;
+    }
+}
+@media screen and (max-width:740px){
+    .footer-container .items{
+        width: 80%;
+        left: 16%;
+    }
+}
+@media screen and (max-width:700px){
+    /* Navbar responsive */
+    .navbar .header-logo img{
+        width: 130px;
+    }
+    .navbar .title{
+        top: 42px;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 20px;
+    }
+    .navbar{height: 65px;}
+    .navbar .responsive-icons img{
+        bottom: 10px;
+    }
+    /* Navbar responsive */
+    .landing img{
+        height: 380px;
+    }
+    .t-img-container img{
+        height: 400px;
+    }
+    .card{
+        flex: 0 0 45%;
+    }
+    .gallery-wrap button{
+        display: none;
+    }
+}
+@media screen and (max-width:680px){
+    .carrousel .bt{
+        font-size: 40px;
+        text-align: center;
+        margin: 0;
+    }
+    .carrousel{
+        margin-top: 100px;
+    }
+}
+@media screen and (max-width:650px){
+    .footer-container .items{
+        width: 90%;
+        left: 8%;
+    }
+    .footer-logo{
+        margin-right: 40px;
+    }
+    .p-card,.t-card{
+        width: 400px;
+        height: 400px;
+        margin-left: -30px;
+    }
+    .p-card p{
+        margin-top: -120px;
+    }
+    .t-car-container h3,.t-car-container p{
+        color: white;
+    }
+}
+@media screen and (max-width:600px){
+    /* Navbar responsive */
+    .navbar{
+        height: 54px;
+    }
+    .navbar .responsive-icons img{
+        width: 30px;
+        bottom: 12px;
+    }
+    .navbar .title{top: 35px;}
+    .navbar .title,.navbar .moune,.navbar .shop{font-size: 18px;}
+    .navbar .header-logo img{
+        width: 110px;
+        margin-left: 10px;
+    }
+    /* Navbar responsive */
+    .landing img:last-child{
+        display: none;
+    }
+    .landing img:first-child{
+        width: 100%;
+        height: 500px;
+    }
+    .t-img-container{
+        flex-direction: column;
+    }
+    .t-cont1,.t-cont2{
+        width: 100%;
+    }
+    .t-cont1 img,.t-cont2 img{
+        height: 600px;
+    }
+
+}
+@media screen and (max-width:578px){
+    .footer-container .items{
+        width: 100%;
+        left: 0;
+    }
+    .acc-text .p2{
+        font-size: 50px;
+    }
+    .carrousel .bt{
+        font-size: 1.8em;
+    }
+}
+@media screen and (max-width:570px){
+    .p-car-header .car-btn button,.t-car-header .car-btn button{
+        width: 50px;
+        height: 50px;
+    }
+    .p-car-header .car-btn button img,.t-car-header .car-btn button img{
+        width: 20px;
+    }
+    .p-car-header h3,.t-car-header h3{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:540px){
+    .footer-logo{
+        margin-right: 70px;
+    }
+}
+@media screen and (max-width:510px){
+    .footer-container .items{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+        gap: 10px;
+        position: relative;
+    }
+}
+@media screen and (max-width:500px){
+    .p-car-header h3,.t-car-header h3{
+        position: relative;
+        top: -10px;
+    }
+    .p-car-header .car-btn button,.t-car-header .car-btn button{
+        width: 40px;
+        height: 40px;
+    }
+    .p-car-header .car-btn button img,.t-car-header .car-btn button img{
+        width: 15px;
+    }
+    .p-car-header h3,.t-car-header h3{
+        margin-top: 20px;
+    }
+    .card{
+        flex: 0 0 55%;
+    }
+}
+@media screen and (max-width:480px){
+    /* Navbar responsive */
+    .navbar .responsive-icons img{right: 20px;}
+    /* Navbar responsive */
+    .t-cont1 img,.t-cont2 img{
+        height: 500px;
+    }
+}
+@media screen and (max-width:450px){
+    .p-car-header,.t-car-header{
+        flex-direction: column;
+    }
+    .p-car-header h3,.t-car-header h3{
+        top: 20px;
+    }
+    .p-car-header .car-btn button,.t-car-header .car-btn button{
+        position: relative;
+        left: 80%;
+        top: 20px;
+    }
+    .p-card,.t-card{
+        width: 350px;
+        height: 350px;
+    }
+    .p-card p{
+        font-size: 23px;
+    }
+    .acc-text .p2{
+        font-size: 40px;
+    }
+    .acc-text .btq{
+        left: 40%;
+    }
+}
+
+@media screen and (max-width:400px){
+    .footer-logo{
+        margin-right: 90px;
+    }
+    .card{
+        flex: 0 0 65%;
+    }
+    .h-car-header .car-btn button,.t-car-header .car-btn button{
+        width: 35px;
+        height: 35px;
+        left: 75%;
+        top: 20px;
+    }
+    .h-car-header .car-btn button img,.t-car-header .car-btn button img{
+        width: 10px;
+    }
+    .landing img:first-child{
+        height: 400px;
+    }
+    .carrousel .bt{
+        font-size: 1.5em;
+    }
+}
+@media screen and (max-width:395px){
+    /* Navbar responsive */
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 16px;
+    }
+    .navbar{
+        height: 52px;
+    }
+    .navbar .header-logo img{
+        width: 100px;
+        margin-left: 15px;
+    }
+    
+    .navbar .responsive-icons img{
+        width: 28px;
+        bottom: 15px;
+    }
+    /* Navbar responsive */
+    .p-car-header .car-btn{
+        margin-right: 60px;
+    }
+}
+@media screen and (max-width:390px){
+    .footer-container .items{
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:350px){
+    /*Navbar responsive*/
+    .navbar .header-logo img{
+        width: 90px;
+    }
+    .navbar{
+        height: 44px;
+    }
+    .navbar .title{
+        top: 30px;
+        right: 22%;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 12px;
+    }
+    .navbar .responsive-icons img{
+        display: none;
+    }
+    .navbar .responsive-icons #menu{
+        display: block;
+    }
+    /*Navbar responsive*/
+    .landing img:first-child{
+        height: 350px;
+    }
+    .acc-text .p2{
+        font-size: 36px;
+    }
+    .acc-text .btq{
+        left: 38%;
+    }
+    .p-car-header .car-btn button,.t-car-header .car-btn button{
+        left: 70%;
+        top: 15px;
+    }
+    .p-card,.t-card{
+        width: 300px;
+        height: 300px;
+    }
+    .p-card p{
+        font-size: 18px;
+        margin-top: -160px;
+    }
+}

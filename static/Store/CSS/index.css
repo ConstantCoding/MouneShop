@@ -1,0 +1,1110 @@
+* {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Bauhaus 93';
+    src: url('../fonts/BAUHS93.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ENTETE ET NAVBAR*/
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(128, 128, 128, 0.1);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar .header-logo {
+    margin-left: -50px;
+}
+
+.actions {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-top: 12px;
+}
+
+.actions a {
+    color: black;
+    font-weight: 550;
+    font-family: arial;
+    font-size: 15px;
+}
+
+.navbar {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    z-index: 200;
+    top: 47px;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 5px 6px rgba(128, 128, 128, 0.1);
+}
+
+.nav-end {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+}
+
+.search {
+    display: flex;
+    margin-left: 30px;
+}
+
+.nav-end .search input {
+    width: 200px;
+    height: 38px;
+    padding: 0 35px;
+    border-radius: 30px;
+    border-color: rgba(128, 128, 128, 0.1);
+    border: none;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+.nav-end .search input::placeholder {
+    color: rgba(128, 128, 128, 1);
+    position: relative;
+    left: 10px;
+    font-size: 18px;
+}
+
+.navbar .nav-end {
+    margin-top: 17px;
+}
+
+.nav-end .end-icon {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+}
+
+.nav-end .end-icon img {
+    margin-left: 40px;
+    margin-top: 3%;
+}
+
+.nav-end .end-icon #compte {
+    position: relative;
+    left: 25%;
+}
+
+.nav-end .search {
+    position: relative;
+    left: 10%;
+}
+
+.nav-end .end-icon #sac .box {
+    position: absolute;
+    right: 90px;
+    width: 100px;
+    height: 120px;
+    background-color: #ccc8c8;
+    border-radius: 3px;
+    display: none;
+}
+
+.nav-end .end-icon #sac .box::before {
+    position: absolute;
+    left: 79px;
+    top: -7px;
+    content: "";
+    height: 18px;
+    width: 18px;
+    background-color: #ccc8c8;
+    transform: rotate(50deg);
+}
+
+.nav-end .end-icon .red-disc,
+.responsive-icons .red-disc {
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 25px;
+    left: 100px;
+}
+
+.nav-end .end-icon #sac .box p {
+    color: black;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.nav-end .end-icon #sac .box p:last-child {
+    font-style: italic;
+}
+
+.nav-end .search img {
+    position: absolute;
+    top: 12%;
+    left: 3%;
+}
+
+.header-container .title {
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.navbar .items {
+    /*background-color: red;*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-family: "helvetica";
+    font-weight: bolder;
+    width: 40%;
+    margin-top: 5px;
+    margin-left: 35px;
+}
+
+.navbar .items a {
+    color: black;
+}
+
+.header-container .title,
+.navbar .title {
+    margin-top: -2px;
+    font-size: 40px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+.header-container .moune,
+.header-container .shop,
+.navbar .moune,
+.navbar .shop {
+    font-size: 30px;
+    font-variant: small-caps;
+}
+
+.navbar .title {
+    display: none;
+}
+
+.navbar .banner {
+    display: none;
+}
+
+.navbar .responsive-icons img {
+    width: 40px;
+}
+
+.navbar .responsive-icons {
+    display: none;
+}
+
+/* ENTETE ET NAVBAR*/
+
+/* LANDING PAGE */
+.img-container {
+    margin-top: 112px;
+    width: 100%;
+    display: flex;
+}
+
+.img-container img {
+    width: 100%;
+}
+
+.acc-words {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.accueil .acc-words .bvn,
+.accueil .acc-words .app,
+.sec-img .bt {
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.accueil .acc-words .slg,
+.sec-img .slg {
+    text-transform: uppercase;
+    font-family: "Bauhaus 93";
+    font-size: 64px;
+}
+
+.accueil .btq,
+.img-section .btq {
+    position: relative;
+    left: 46%;
+    margin-top: 20px;
+    height: 40px;
+    width: 110px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* LANDING PAGE */
+
+/* SECTION D'IMAGES 1*/
+.img-section {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.img-s1,
+.img-s2,
+.img-s3,
+.img-s4 {
+    width: 100%;
+    height: 720px;
+    margin-bottom: 0;
+}
+
+.img-s1 img {
+    width: 100%;
+    height: 100%;
+}
+
+.img-section .secp1 {
+    color: white;
+    font-weight: bolder;
+    font-size: 23px;
+    font-family: Arial;
+    position: relative;
+    top: -190px;
+    left: 25px;
+    width: 300px;
+}
+
+.img-section .sec1,
+.img-section .sec2,
+.img-section .sec3,
+.img-section .sec4 {
+    background-color: white;
+    color: black;
+    position: relative;
+    left: 25px;
+    top: -180px;
+    z-index: 1000;
+}
+
+/* SECTION D'IMAGES 1*/
+
+/*SECTION D'IMAGES 2*/
+.sec-img p {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.sec-img button {
+    position: relative;
+    left: 45%;
+    height: 40px;
+    width: 150px;
+    background-color: black;
+    color: white;
+    font-weight: bolder;
+    border-radius: 30px;
+    border: none;
+}
+
+.sec-img .s-bsk img {
+    margin-top: 40px;
+    width: 100%;
+    height: 512px;
+}
+
+/*SECTION D'IMAGES 2*/
+/*SECTION CARROUSEL*/
+.carrousel .bt {
+    margin-top: 40px;
+    margin-left: 45px;
+    text-transform: uppercase;
+    font-family: "Bauhaus 93";
+    font-size: 46px;
+}
+
+.gallery-wrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.gallery-wrap button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#backBtn {
+    position: absolute;
+    left: 10px;
+}
+
+#nextBtn {
+    position: absolute;
+    right: 10px;
+}
+
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 5px;
+    width: 100%;
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    flex: 0 0 25%;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background: #000;
+    border-radius: 10px;
+}
+
+.card p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bolder;
+    text-decoration: none;
+    position: relative;
+    bottom: 18%;
+}
+
+/*SECTION CARROUSEL*/
+/*PIED DE PAGE*/
+.footer-logo {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-logo img {
+    margin-top: 70px;
+    width: 180px;
+}
+
+.footer-container .items {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    width: 46%;
+    position: relative;
+    left: 30%;
+}
+
+.footer-container .items a {
+    color: black;
+    font-weight: 550;
+    font-family: arial;
+    font-size: 18px;
+}
+
+footer p {
+    margin-top: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 18px;
+    font: arial;
+}
+
+/*PIED DE PAGE*/
+
+@media screen and (max-width:1180px) {
+
+    /* header et navbar */
+    header {
+        display: none;
+    }
+
+    .navbar {
+        position: relative;
+        top: 0;
+        height: 100px;
+    }
+
+    .navbar .items,
+    .navbar .nav-end {
+        display: none;
+    }
+
+    .navbar .title {
+        display: block;
+        position: relative;
+        right: 20%;
+        top: 55px;
+    }
+
+    .navbar .responsive-icons {
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        gap: 8%;
+    }
+
+    .navbar .responsive-icons img {
+        margin-top: 25px;
+    }
+    .responsive-icons .red-disc {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        bottom: 46px;
+        left: 4px;
+    }
+
+    /*Bannière responsive */
+    .navbar .banner {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #fff;
+        margin-right: -60%;
+    }
+
+    .navbar .banner.ban-responsive {
+        display: flex;
+        margin-right: -60%;
+        animation: appear 0.6s forwards ease;
+    }
+
+    @keyframes appear {
+        to {
+            margin-right: 0;
+        }
+    }
+
+    .navbar .banner a {
+        color: black;
+        font-size: 1.5em;
+        font-weight: 500;
+        font-family: Arial;
+        margin-top: 15px;
+        padding-left: 20px;
+    }
+
+    .navbar .ban-head {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navbar .banner img {
+        width: 30px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+
+    /*Bannière responsive */
+    /* header et navbar */
+    /* Landing page */
+    .accueil {
+        margin-top: -115px;
+    }
+
+    /* Landing page */
+
+    .card {
+        flex: 0 0 30%;
+    }
+
+    /* Pied de page */
+    .footer-container .items {
+        width: 55%;
+        left: 28%;
+    }
+
+    /* Pied de page */
+}
+
+/*pour la carrousel
+@media screen and (max-width:990px){
+
+}*/
+
+@media screen and (max-width:940px) {
+    .img-section {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .accueil .acc-words .slg {
+        font-size: 50px;
+    }
+
+    /* Navbar responsive */
+
+    .navbar .responsive-icons img {
+        width: 35px;
+        margin-top: 30px;
+        position: relative;
+        right: 25px;
+    }
+
+    .navbar {
+        height: 80px;
+    }
+
+    .navbar .title {
+        position: relative;
+        top: 48px;
+    }
+
+    .navbar .header-logo img {
+        width: 150px;
+    }
+
+    .navbar .title,
+    .navbar .moune,
+    .navbar .shop {
+        font-size: 26px;
+    }
+
+    /* Navbar responsive */
+    .sec-img .s-bsk img {
+        height: 450px;
+    }
+
+    .carrousel .bt {
+        font-size: 38px;
+    }
+    .responsive-icons .red-disc{
+        bottom: 40px;
+        left: -20px;
+    }
+}
+
+@media screen and (max-width:900px) {
+    .footer-container .items {
+        width: 60%;
+        left: 26%;
+    }
+}
+
+@media screen and (max-width:850px) {
+    .accueil .acc-words .slg {
+        font-size: 40px;
+    }
+
+    .accueil .acc-words .bvn,
+    .accueil .acc-words .app {
+        font-size: 18px;
+    }
+
+    .footer-container .items {
+        width: 70%;
+        left: 24%;
+    }
+
+    .sec-img .slg {
+        font-size: 50px;
+    }
+
+    .sec-img .bt {
+        font-size: 18px;
+    }
+
+    .sec-img .cmd {
+        left: 40%;
+    }
+
+    .carrousel .bt {
+        font-size: 35px;
+    }
+
+    .card {
+        flex: 0 0 35%;
+    }
+}
+
+@media screen and (max-width:740px) {
+    .footer-container .items {
+        width: 80%;
+        left: 16%;
+    }
+
+    .sec-img .s-bsk img {
+        height: 400px;
+    }
+
+    .carrousel .bt {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width:700px) {
+
+    /* Navbar responsive */
+    .navbar .header-logo img {
+        width: 130px;
+    }
+
+    .navbar .title {
+        top: 42px;
+    }
+
+    .navbar .title,
+    .navbar .moune,
+    .navbar .shop {
+        font-size: 20px;
+    }
+
+    .navbar {
+        height: 65px;
+    }
+
+    .navbar .responsive-icons img {
+        bottom: 10px;
+    }
+
+    .responsive-icons .red-disc {
+        width: 10px;
+        height: 10px;
+        position: relative;
+        bottom: 50px;
+        left: -20px;
+    }
+
+    /* Navbar responsive */
+    .card {
+        flex: 0 0 40%;
+    }
+
+    .gallery-wrap button {
+        display: none;
+    }
+}
+
+@media screen and (max-width:650px) {
+    .footer-container .items {
+        width: 90%;
+        left: 8%;
+    }
+
+    .img-s1,
+    .img-s2,
+    .img-s3,
+    .img-s4 {
+        height: 550px;
+    }
+
+    .sec-img .slg {
+        font-size: 40px;
+    }
+
+    .sec-img .bt {
+        font-size: 16px;
+    }
+
+    .sec-img .cmd {
+        left: 38%;
+    }
+
+    .carrousel .bt {
+        font-size: 26px;
+    }
+
+    .footer-logo {
+        margin-right: 40px;
+    }
+}
+
+@media screen and (max-width:620px) {
+    .sec-img .s-bsk img {
+        height: 350px;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    /* Navbar responsive */
+    .navbar {
+        height: 54px;
+    }
+
+    .navbar .responsive-icons img {
+        width: 30px;
+        bottom: 12px;
+    }
+
+    .navbar .title {
+        top: 35px;
+    }
+
+    .navbar .title,
+    .navbar .moune,
+    .navbar .shop {
+        font-size: 18px;
+    }
+
+    .navbar .header-logo img {
+        width: 110px;
+        margin-left: 10px;
+    }
+
+    /* Navbar responsive */
+}
+
+@media screen and (max-width:578px) {
+    .footer-container .items {
+        width: 100%;
+        left: 0;
+    }
+
+    .img-s1,
+    .img-s2,
+    .img-s3,
+    .img-s4 {
+        height: 450px;
+    }
+}
+
+@media screen and (max-width:540px) {
+    .accueil .acc-words .slg {
+        font-size: 36px;
+    }
+
+    .accueil .acc-words .bvn,
+    .accueil .acc-words .app {
+        font-size: 16px;
+    }
+
+    .accueil .btq.acc {
+        left: 40%;
+    }
+
+    .sec-img .s-bsk img {
+        height: 300px;
+    }
+
+    .footer-logo {
+        margin-right: 70px;
+    }
+}
+
+@media screen and (max-width:510px) {
+    .footer-container .items {
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+        gap: 10px;
+        position: relative;
+    }
+
+    .carrousel .bt {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .card {
+        flex: 0 0 55%;
+    }
+}
+
+@media screen and (max-width:480px) {
+
+    /* Navbar responsive */
+    .navbar .responsive-icons img {
+        right: 20px;
+    }
+
+    /* Navbar responsive */
+}
+
+@media screen and (max-width:455px) {
+    .accueil .acc-words .slg {
+        font-size: 30px;
+    }
+
+    .accueil .acc-words .bvn,
+    .accueil .acc-words .app {
+        font-size: 14px;
+    }
+
+    .accueil .btq.acc {
+        left: 39%;
+    }
+
+    .sec-img .slg {
+        font-size: 35px;
+    }
+
+    .sec-img .bt {
+        font-size: 15px;
+    }
+
+    .sec-img .cmd {
+        left: 35%;
+    }
+
+    .sec-img .s-bsk img {
+        height: 280px;
+    }
+}
+
+@media screen and (max-width:400px) {
+
+    .img-s1,
+    .img-s2,
+    .img-s3,
+    .img-s4 {
+        height: 400px;
+    }
+
+    .card {
+        flex: 0 0 65%;
+    }
+
+    .footer-logo {
+        margin-right: 90px;
+    }
+}
+
+@media screen and (max-width:395px) {
+
+    /* Navbar responsive */
+    .navbar .title,
+    .navbar .moune,
+    .navbar .shop {
+        font-size: 16px;
+    }
+
+    .navbar {
+        height: 52px;
+    }
+
+    .navbar .header-logo img {
+        width: 100px;
+        margin-left: 15px;
+    }
+
+    .navbar .responsive-icons img {
+        width: 28px;
+        bottom: 15px;
+    }
+
+    /* Navbar responsive */
+    .img-container {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width:390px) {
+    .footer-container .items {
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width:385px) {
+
+    .img-s1 .secp1,
+    .img-s2 .secp2,
+    .img-s3 .secp3,
+    .img-s4 .secp4 {
+        font-size: 18px;
+    }
+
+    .img-s1,
+    .img-s2,
+    .img-s3,
+    .img-s4 {
+        height: 350px;
+    }
+
+    .sec-img .s-bsk img {
+        height: 250px;
+    }
+
+}
+
+@media screen and (max-width:379px) {
+    .accueil .acc-words .slg {
+        font-size: 25px;
+    }
+
+    .accueil .acc-words .bvn,
+    .accueil .acc-words .app {
+        font-size: 12px;
+    }
+
+    .sec-img .slg {
+        font-size: 30px;
+    }
+
+    .sec-img .bt {
+        font-size: 14px;
+    }
+
+    .sec-img .cmd {
+        left: 30%;
+    }
+}
+
+@media screen and (max-width:350px) {
+
+    /*Navbar responsive*/
+    .navbar .header-logo img {
+        width: 90px;
+    }
+
+    .navbar {
+        height: 44px;
+    }
+
+    .navbar .title {
+        top: 30px;
+        right: 22%;
+    }
+
+    .navbar .title,
+    .navbar .moune,
+    .navbar .shop {
+        font-size: 12px;
+    }
+
+    .navbar .responsive-icons img {
+        bottom: 17px;
+    }
+
+    /*Navbar responsive*/
+    .accueil {
+        margin-top: -110px;
+    }
+
+    .img-container {
+        height: 250px;
+    }
+
+    .carrousel .bt {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .sec-img .slg {
+        font-size: 28px;
+    }
+
+    .sec-img .bt {
+        font-size: 14px;
+    }
+
+    .sec-img .cmd {
+        left: 30%;
+    }
+}
+
+@media screen and (max-width:300px) {
+    .accueil .btq.acc {
+        left: 35%;
+    }
+
+    .img-container {
+        height: 220px;
+    }
+
+    .img-s1,
+    .img-s2,
+    .img-s3,
+    .img-s4 {
+        height: 250px;
+    }
+
+    .img-s1 .secp1,
+    .img-s2 .secp2,
+    .img-s3 .secp3,
+    .img-s4 .secp4 {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width:295px) {
+    .sec-img .s-bsk img {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width:275px) {
+
+    /* Navbar responsive */
+    .navbar .responsive-icons img {
+        display: none;
+    }
+
+    .navbar .responsive-icons #menu {
+        display: block;
+    }
+
+    .accueil .btq.acc {
+        left: 33%;
+    }
+
+    .sec-img .slg {
+        font-size: 25px;
+    }
+
+    .sec-img .bt {
+        font-size: 13px;
+    }
+
+    .sec-img .cmd {
+        left: 26%;
+    }
+
+    /* Navbar responsive */
+}
+
+@media screen and (max-width:250px) {
+    .accueil .btq.acc {
+        left: 30%;
+    }
+
+    .img-container {
+        height: 200px;
+    }
+}

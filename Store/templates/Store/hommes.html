@@ -1,0 +1,235 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hommes</title>
+    <link rel="stylesheet" href="{% static 'Store/CSS/hommes.css' %}">
+    <style>
+        .nav-end .search button{
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!--Entete et navbar-->
+    <header>
+        <div class="header-container">
+            <div class="title"><p>M<span class="moune">oune</span>S<span class="shop">hop</span></p></div>
+            <div class="actions">
+                <a href="{% url 'contact'%}">Nous contacter |</a>
+                <a href="{% url 'register_store'%}">Rejoignez-nous |</a>
+                <a href="{% url 'login_store'%}">Se Connecter</a>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="header-logo">
+            <a href="{%url 'index'%}"><img width="180" src="{% static 'Store/icons/logo.png'%}" loading="lazy" alt="LOGO"></a>
+        </div>
+        <div class="title"><p>M<span class="moune">oune</span>S<span class="shop">hop</span></p></div>
+        
+        <ul class="items">
+            <li><a href="{% url 'nouveautes' %}">Nouveautés</a></li>
+            <li><a href="{% url 'hommes' %}">Hommes</a></li>
+            <li><a href="{% url 'femmes' %}">Femmes</a></li>
+            <li><a href="{% url 'enfants'%}">Enfants</a></li>
+        </ul>
+
+        <div class="nav-end">
+            <form class="search"> 
+                <input type="search" placeholder="Recherche">
+                <button type="submit"><img loading="lazy" width="30" src="{% static 'Store/icons/search.png'%}" alt=""></button>
+            </form>
+            <div class="end-icon">
+                <a id="compte" href="{%url 'detail_utilisateur'%}"><img width="30" src="{% static 'Store/icons/person.png'%}" loading="lazy" alt=""></a>
+                <a id="sac" href="{%url 'voir_panier'%}">
+                    <img width="30" src="{% static 'Store/icons/shopping_bag.png'%}" loading="lazy" alt="">
+                    <div class="box">
+                    {%if panier%}
+                        <div class="red-disc"></div>
+                    {%endif%}
+                    <p>{{user.username}} connecté(e)</p>
+                    <p>cliquer pour voir les details</p>
+                    </div>
+                </a>          
+            </div>
+            
+        </div>
+        <div class="responsive-icons">
+            <a id="search" href=""><img src="{% static 'Store/icons/search.png'%}" loading="lazy" alt=""></a>
+            <a href="login.html"><img loading="lazy" src="{% static 'Store/icons/person.png'%}" alt=""></a>
+            <a href="">
+                <img loading="lazy" src="{% static 'Store/icons/shopping_bag.png'%}" alt="">
+                {%if panier%}
+                    <div class="red-disc"></div>
+                {%endif%}
+            </a>
+            <a href=""><img loading="lazy" id="menu" src="{%static 'Store/icons/Menu.png'%}" alt=""></a>
+        </div>
+        <div class="banner">
+            <div class="ban-head"><img loading="lazy" id="croix" src="{% static 'Store/icons/croix.png' %}" alt=""></div>
+            <a href="{% url 'index'%}">Accueil</a>
+            <a href="{% url 'nouveautes'%}">Nouveautés</a>
+            <a href="{% url 'boutique' %}">Boutique</a>
+            <a href="{% url 'hommes' %}">Hommes</a>
+            <a href="{% url 'femmes'%}">Femmes</a>
+            <a href="{% url 'enfants' %}">Enfants</a>
+            <a href="{% url 'contact'%}">Nous contacter</a>
+            <a href="{% url 'register_store'%}">Rejoignez-nous</a>
+            <a href="{% url 'login_store'%}">Se Connecter</a>
+        </div>
+    </nav>
+
+    <div class="h-title">
+        <h1>Hommes</h1>
+    </div>
+    <!--Entete et navbar-->
+
+    <!--Landing-->
+    
+    <section class="sec-img">
+        {%for item in landing_item_homme %}
+        <img loading="lazy" class="img1" src="{{item.item_image.url}}" alt="landing">
+        {%endfor%}
+    </section>
+    <!--Landing-->
+    
+    <!--Accueil-->
+    <section class="accueil">
+        <p class="acc-words"> <span class="bvn">{{landing_homme.section_title}}</span>  <br> <span class="slg">{{landing_homme.section_slogan}}</span> <br> <span class="app">{{ldg_homme_text.optional_text}}</span></p>
+        <button onclick="location.href='boutique.html'" class="btq acc">Boutique</button> 
+    </section>
+    <!--Accueil-->
+    <!--sportif choice-->
+    <section class="sportif-choice">
+        <h3>{{sportifs_choice.section_title}}</h3>
+        <div class="sportif-container">
+            {% for item in sportifs_choice_item%}
+            <div class="sec-s1">
+                <img loading="lazy" src="{{item.item_image.url}}" alt="">
+                <p class="p1">{{item.item_name}}</p>
+                <p class="p2">{{item.optional_text}}</p>
+                <button onclick="location.href='boutique.html'" class="btq acc">Boutique</button> 
+            </div>
+            {%endfor%}
+
+        </div>
+    </section>
+        
+    <!--sportif choice-->
+    <!--Carroussel Hommes-->
+    <section class="man-carroussel">
+        <div class="h-car-header">
+            <h3>{{car_homme.carrousel_title}}</h3>
+            <div class="car-btn">
+                <button class="b1"><img src="{% static 'Store/icons/back.png'%}"></button>
+                <button class="b2"><img src="{% static 'Store/icons/next.png'%}"></button>
+            </div>
+        </div>
+        <div class="h-wrapper">
+            {%for item in car_homme_item%}
+            <div class="h-car-container">
+                <div class="h-card">
+                    <img src="{{item.car_item_image.url}}" loading="lazy" alt="{{item.car_item_description}}">
+                    <p>{{item.car_item_description}}</p>
+                    <button class="btq">Boutique</button>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </section>
+    <!--Carrousel Hommes-->
+
+    <!--Incontournables pour le sport-->
+    <section class="I-sport">
+        <h3>{{incontournable_sport_homme.section_title}}</h3>
+        <div class="I-sport-container">
+            {% for item in incontournable_item%}
+                <div class="I-s1">
+                    <img loading="lazy" src="{{item.item_image.url}}" alt="">
+                    <p class="Ip1">{{item.item_name}}</p>
+                    <p class="Ip2">{{item.optional_text}}.</p>
+                    <button onclick="location.href='boutique.html'" class="btq acc">Boutique</button> 
+                </div>
+            {%endfor%}
+            
+        </div>
+    </section>
+    <!--Incontournables pour le sport-->
+    <!--Les plus populaire-->
+    <section class="populaire">
+        <h3>{{pop_homme.section_title}}</h3>
+        <div class="pop-container">
+            {%for item in pop_homme_item%}
+            <div class="p-s1">
+                <img loading="lazy" src="{{item.item_image.url}}" alt="">
+                <p class="Ip1">{{item.optional_text}}</p>
+            </div>
+            {%endfor%}
+            
+        </div>
+    </section>
+    <!--Les plus populaire-->
+    <!--SECTION CARROUSEL-->
+    <section class="carrousel">
+        <p class="bt">{{car_classique.carrousel_title}}</p>
+        <div class="gallery-wrap">
+            <button id="backBtn">&lt;</button>
+            <div class="gallery">
+                {%for item in car_classique_items %}
+                <div class="card">
+                    <a href="{%url 'boutique'%}">
+                        <img src="{{item.car_item_image.url}}" loading="lazy" alt="{{item.car_item_name}}">
+                        <p>{{item.car_item_name}}</p>
+                    </a>
+                </div>
+                {%endfor%}
+                
+            </div>
+            <button id="nextBtn">&gt;</button>
+        </div>
+    </section>
+    <!--SECTION CARROUSEL-->
+    <!--PIED DE PAGE-->
+    <footer>
+        <div class="footer-logo"><img loading="lazy" src="{% static 'Store/icons/logo.png'%}" alt=""></div>
+        <div class="footer-container">
+            <ul class="items">
+                <li><a href="">Trouver notre magasin</a></li>
+                <li><a href="{%url 'contact'%}">Aide</a></li>
+                <li><a href="{%url 'register_store'%}">Rejoignez-nous</a></li>
+                <li><a href="{%url 'login_store'%}">Se connecter</a></li>
+            </ul>
+        </div>
+        <p>©️ copyright MouneShop 2025. All right reserved.</p>
+    </footer>
+    <!--PIED DE PAGE-->
+    <script>
+        let btnBack = document.querySelector(".b1")
+        let btnNext = document.querySelector(".b2")
+        let container = document.querySelector(".h-wrapper")
+        btnNext.addEventListener("click", ()=>{
+            container.style.scrollBehavior = "smooth"
+            container.scrollLeft += 400
+        })
+        btnBack.addEventListener("click", ()=>{
+            container.style.scrollBehavior = "smooth"
+            container.scrollLeft -= 400
+        })
+        
+    </script>
+    <script src="{% static 'Store/JS/script.js' %}"></script>
+    <script src="{% static 'Store/JS/style-responsive.js' %}"></script>
+    <script>
+        let button_boutique = document.querySelectorAll(".btq")
+        button_boutique.forEach(btq => btq.addEventListener("click", (event)=>{
+            event.preventDefault()
+            location.href = "{%url 'boutique'%}"
+        }))
+    </script>
+</body>
+</html>

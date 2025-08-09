@@ -1,0 +1,1116 @@
+*{
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Bauhaus 93';
+    src: url('../fonts/BAUHS93.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+/* ENTETE ET NAVBAR*/
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(128, 128, 128,0.1);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.navbar .header-logo{
+    margin-left: -50px;
+}
+.actions{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-top: 12px;
+}
+.actions a{
+    color: black;
+    font-weight: 550;
+    font-family: arial;
+    font-size: 15px;
+}
+.navbar{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    z-index: 200;
+    top: 47px;
+    width: 100%;
+    background-color:white;
+    box-shadow: 0 5px 6px rgba(128, 128, 128, 0.1);
+}
+
+.nav-end{ 
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;  
+}
+.search{display: flex;}
+.nav-end .search input{
+    width: 200px;
+    height: 38px;
+    padding: 0 35px;
+    border-radius: 30px;
+    border-color: rgba(128, 128, 128, 0.1);
+    border: none;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+.nav-end .search input::placeholder{
+    color: rgba(128, 128, 128, 1);
+    position: relative;
+    left: 10px;
+    font-size: 18px;
+}
+.navbar .nav-end{
+    margin-right: 80px;
+    margin-top:17px;
+}
+.nav-end .end-icon{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;  
+}
+.nav-end .end-icon img{
+    margin-left:40px;
+    margin-top: 3%;
+}
+.nav-end .end-icon #compte{
+    position: relative;
+    left: 10%;
+}
+
+.nav-end .end-icon #sac .box{
+    position: absolute;
+    right: 90px;
+    width: 100px;
+    height: 120px;
+    background-color: #ccc8c8;
+    border-radius: 3px;
+    z-index: 2000;
+    display: none;
+}
+
+.nav-end .end-icon .red-disc,
+.responsive-icons .red-disc {
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 35px;
+    right: 60px;
+}
+
+.nav-end .end-icon #sac .box::before{
+    position: absolute;
+    left: 79px;
+    top: -7px;
+    content: "";
+    height: 18px;
+    width: 18px;
+    background-color: #ccc8c8;
+    transform: rotate(50deg);
+}
+.nav-end .end-icon #sac .box p{
+    color: black;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 10px;
+}
+.nav-end .end-icon #sac .box p:last-child{
+    font-style: italic;
+}
+
+.nav-end .search{
+    position: relative;
+    left: 10%;
+}
+.nav-end .search img{
+    position: absolute;
+    top: 12%;
+    left: 3%;  
+}
+.header-container .title{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.navbar .items{
+    /*background-color: red;*/
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    font-size: 18px;
+    font-family: "helvetica";
+    font-weight: bolder;
+    width: 40%;
+    margin-top: 5px;
+    margin-left: 35px;
+}
+.navbar .items a{color: black;}
+
+.header-container .title,.navbar .title{
+    margin-top: -2px;
+    font-size: 40px;
+    font-weight: bolder;
+    text-decoration:underline;
+}
+.navbar .responsive-icons img{
+    width: 40px;
+}
+.header-container .moune,.header-container .shop,.navbar .moune,.navbar .shop{
+    font-size: 30px;
+    font-variant: small-caps;
+}
+.h-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 160px;
+    font-family: Arial;
+}
+.navbar .responsive-icons,.navbar .title{
+    display: none;
+}
+.navbar .banner{
+    display: none;
+}
+/* ENTETE ET NAVBAR*/
+
+/*Landing*/
+.img1,.img2{
+    width: 50%;
+    height: 100%;
+    height: 550px;
+    margin-top: 25px;
+}
+.sec-img{
+    display: flex;
+}
+/*Landing*/
+
+/* Accueil */
+.acc-words{
+    margin-top: 40px;
+    text-align: center;
+}
+.accueil .acc-words .bvn,.accueil .acc-words .app,.sec-img .bt{
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 20px;
+}
+.accueil .acc-words .slg, .sec-img .slg{
+    text-transform: uppercase;
+    font-family: "Bauhaus 93";
+    font-size: 64px;
+}
+.accueil .btq,.img-section .btq{
+    position:relative;
+    left: 46%;
+    margin-top: 20px;
+    height: 40px;
+    width: 110px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    border:none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* Accueil */
+
+/* Sportifs choice*/
+.sportif-choice{
+    margin-top: 60px;
+    width: 100vw;
+    height: 600px;
+}
+.sportif-choice .sec-s1,.sportif-choice .sec-s2{
+    width: 50%;
+}
+.sportif-container{
+    display: flex;
+}
+.sportif-choice img{
+    margin-top: 15px;
+    width: 100%;
+    height: 600px;
+    z-index: 1;
+}
+.sportif-choice h3{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family: Arial;
+    font-size: 1.5em;
+}
+.sportif-choice .p1{
+    font-size: 20px;
+    color: white;
+    font-family: Arial;
+}
+
+.sportif-choice .p2{
+    font-size: 26px;
+    color: white;
+    font-family: Arial;
+    margin-top: 10px;
+}
+.sportif-choice .btq,.h-card button,.I-sport .btq{
+    margin-top: 10px;
+    height: 40px;
+    width: 110px;
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    border:none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.sportif-choice .p1,.sportif-choice .p2,.sportif-choice .btq{
+    position: relative;
+    bottom: 250px;
+    margin-left: 40px;
+}
+/* Sportifs choice*/
+
+/* carroussel hommes */
+
+.man-carroussel{
+    margin-top: 120px;
+}
+.h-car-header{
+    display: flex;
+    justify-content: space-between;
+}
+.h-car-header h3{
+    margin: 16px 0 0 40px;
+    font-family: Arial;
+    font-size: 1.5em;
+}
+.car-btn{
+    margin-right: 20px;
+}
+.car-btn button{
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.car-btn button:hover{
+    background-color: rgb(221, 213, 213);
+}
+.car-btn button:first-child{
+    margin-right: 10px;
+}
+.car-btn button img{
+    width: 25px;
+    position: relative;
+    top: 3px;
+}
+.h-car-container{
+    margin-top: 10px;
+}
+.h-card{
+    width: 500px;
+    height: 500px;
+}
+.h-card img{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.h-card p{
+    font-size: 26px;
+    color:white;
+    font-family: Arial;
+    margin-top: 10px;
+}
+.h-card p,.h-card button{
+    position: relative;
+    bottom: 150px;
+    margin-left: 30px;
+}
+.h-wrapper{
+    display: flex;
+    overflow: hidden;
+}
+
+/* carroussel hommes */
+
+/* Incontournables pour le sport */
+.I-sport{
+    margin-top: 60px;
+    width: 100vw;
+    height: 600px;
+}
+.I-sport .I-s1,.I-sport .I-s2{
+    width: 50%;
+}
+.I-sport-container{
+    display: flex;
+}
+.I-sport img{
+    margin-top: 15px;
+    width: 100%;
+    height: 550px;
+    z-index: 1;
+}
+.I-sport h3{
+    margin-top: 20px;
+    margin-left: 20px;
+    font-family: Arial;
+    font-size: 1.5em;
+}
+.I-sport .Ip1{
+    font-size: 20px;
+    color: white;
+    font-family: Arial;
+}
+
+.I-sport .Ip2{
+    font-size: 26px;
+    color: white;
+    font-family: Arial;
+    margin-top: 10px;
+}
+
+.I-sport .Ip1,.I-sport .Ip2,.I-sport .btq{
+    position: relative;
+    bottom: 250px;
+    margin-left: 40px;
+}
+
+/* Incontournables pour le sport */
+
+/* Les plus populaire */
+.populaire{
+    margin-top: 80px;
+}
+.pop-container{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.populaire h3{
+    margin-left: 80px;
+    font-family: Arial;
+    font-size: 1.5em;
+}
+.pop-container img{
+    width: 350px;
+    height: 350px;
+    margin-top: 20px;
+}
+.pop-container p{
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: 600;
+}
+/* Les plus populaire */
+
+/*SECTION CARROUSEL*/
+.carrousel .bt{
+    margin-top: 40px;
+    margin-left: 45px;
+    text-transform: uppercase;
+    font-family: "Bauhaus 93";
+    font-size: 46px;
+}
+.gallery-wrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.gallery-wrap button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#backBtn {
+    position: absolute;
+    left: 10px;
+}
+
+#nextBtn {
+    position: absolute;
+    right: 10px;
+}
+
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 5px;
+    width: 100%;
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    flex: 0 0 25%;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background: #000;
+    border-radius: 10px;
+}
+
+.card p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bolder;
+    text-decoration: none;
+    position: relative;
+    bottom: 18%;
+}
+/*SECTION CARROUSEL*/
+
+/*PIED DE PAGE*/
+.footer-logo{
+    display: flex;
+    justify-content: center;
+}
+.footer-logo img{
+    margin-top: 70px;
+    width: 180px;
+}
+.footer-container .items{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    width: 46%;
+    position: relative;
+    left:30%;
+}
+.footer-container .items a{
+    color: black;
+    font-weight: 550;
+    font-family: arial;
+    font-size: 18px;
+}
+footer p{
+    margin-top: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 18px;
+    font: arial;
+}
+/*PIED DE PAGE*/
+@media screen and (max-width:1180px){
+    header{display: none;}
+    .navbar{
+        position: relative;
+        top: 0;
+        height: 100px;
+    }
+    .navbar .items,.navbar .nav-end{
+        display: none;
+    }
+    .navbar .title{
+        display: block;
+        position: relative;
+        right: 21%;
+        top: 55px;
+    }
+    .navbar .responsive-icons{
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        gap: 8%;
+    }
+    .navbar .responsive-icons img{margin-top: 25px;}
+    /*Bannière responsive */
+    .navbar .banner{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #fff;
+        margin-right: -60%;   
+    }
+    .navbar .banner.ban-responsive{
+        display: flex;
+        margin-right: -60%;
+        animation: appear 0.6s forwards ease;
+    }
+    @keyframes appear{
+        to{
+            margin-right: 0;
+        }
+    }
+    .navbar .banner a{
+        color: black;
+        font-size: 1.5em;
+        font-weight: 500;
+        font-family: Arial;
+        margin-top: 15px;
+        padding-left: 20px;
+    }
+    .navbar .ban-head{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .responsive-icons .red-disc {
+     
+        bottom: 55px;
+        right: 100px;
+    }
+
+
+    .navbar .banner img{
+        width: 30px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    /*Bannière responsive */
+    
+    .h-title{
+        margin-top: 40px;
+    }
+    /* Pied de page */
+    .footer-container .items{
+        width: 55%;
+        left: 28%;
+    }
+    /* Pied de page */
+}
+@media screen and (max-width:1080px){
+    .populaire h3{
+        text-align: center;
+    }
+    .pop-container{
+        display: grid;
+    }
+    .pop-container img{
+        width: 100%;
+        height: 700px;
+    }
+    .card{
+        flex: 0 0 30%;
+    }
+}
+@media screen and (max-width:940px){
+    /* Navbar responsive */
+    .navbar .responsive-icons img{
+        width: 35px;
+        margin-top: 30px;
+        position: relative;
+        right: 25px;
+    }
+    .navbar{
+        height: 80px;
+    }
+    .navbar .title{
+        position: relative;
+        top: 48px;
+    }
+
+    .responsive-icons .red-disc {
+        right: 120px;
+        bottom: 30px;
+    }
+    .navbar .header-logo img{
+        width: 150px;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 26px;
+    }
+    /* Navbar responsive */
+    /* Landing */
+    .sec-img .img1,.sec-img .img2{
+        height: 490px;
+    }
+    /* Landing */
+}
+@media screen and (max-width:900px){
+    .sportif-choice img,.I-sport-container img{
+        height: 500px;
+    }
+    .footer-container .items{
+        width: 60%;
+        left: 26%;
+    }
+    .populaire{
+        margin-top: 20px;
+    }
+    .man-carroussel{
+        margin-top: 40px;
+    }
+}
+@media screen and (max-width:850px){
+    /* Landing */
+    .sec-img .img1,.sec-img .img2{
+        height: 430px;
+    }
+    /* Landing */
+    /* Accueil */
+    .accueil .acc-words .slg{
+        font-size: 60px;
+    }
+    .accueil .acc-words .bvn,.accueil .acc-words .app{
+        font-size: 20px;
+    }
+    /* Accueil */
+    .sportif-choice img,.I-sport-container img{
+        height: 450px;
+    }
+    .populaire{
+        margin-top: -40px;
+    }
+    .man-carroussel{
+        margin-top: -30px;
+    }
+    .card{
+        flex: 0 0 35%;
+    }
+    .footer-container .items{
+        width: 70%;
+        left: 24%;
+    }
+}
+@media screen and (max-width:800px){
+    .accueil .acc-words .slg{
+        font-size: 50px;
+    }
+    .accueil .acc-words .bvn,.accueil .acc-words .app{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:740px){
+    .sportif-choice img{
+        height: 400px;
+    }
+    .man-carroussel{
+        margin-top: -90px;
+    }
+    .footer-container .items{
+        width: 80%;
+        left: 16%;
+    }
+}
+@media screen and (max-width:700px){
+    /* Navbar responsive */
+    .navbar .header-logo img{
+        width: 130px;
+    }
+    .navbar .title{
+        top: 42px;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 20px;
+    }
+    .navbar{height: 65px;}
+    .navbar .responsive-icons img{
+        bottom: 10px;
+    }
+    /* Navbar responsive */
+    /* Landing */
+    .sec-img .img1,.sec-img .img2{
+        height: 350px;
+    }
+    /* Landing */
+    .card{
+        flex: 0 0 45%;
+    }
+    .gallery-wrap button{
+        display: none;
+    }
+    .carrousel .bt{
+        margin: 0;
+        text-align: center;
+    }
+}
+@media screen and (max-width:680px){
+    .carrousel .bt{
+        font-size: 36px;
+    }
+}
+@media screen and (max-width:650px){
+    .accueil .btq{
+        left: 40%;
+    }
+    .sportif-choice{
+        height: 1240px;
+    }
+    .I-sport,.I-sport-container{
+        height: 1240px;
+    }
+    .sportif-container{
+        height: 1240px;
+    }
+    .sportif-container,.I-sport-container{
+        display: grid;
+        grid-template-columns: auto;
+    }
+    .sec-s2{
+        position: relative;
+        top: -185px;
+        width: 100%;
+    }
+    .I-sport .I-s2{
+        position: relative;
+        top: -185px;
+    }
+    .sportif-choice .sec-s1,.sportif-choice .sec-s2,.I-sport .I-s1,.I-sport .I-s2{
+        width: 100%;
+    }
+    .sportif-choice .sec-s1 img,.sportif-choice .sec-s2 img,.I-sport-container .I-s1 img,.I-sport-container .I-s2 img{
+        height: 600px;
+    }
+    .footer-container .items{
+        width: 90%;
+        left: 8%;
+    }
+    .populaire{
+        margin-top: 80px;
+    }
+    /* Carrousel hommes */
+    .man-carroussel{
+        margin-top: 40px;
+    }
+    .h-card{
+        width: 400px;
+        height: 400px;
+        margin-left: -30px;
+    }
+    /* Carrousel hommes */
+}
+@media screen and (max-width:600px){
+    /* Navbar responsive */
+    .navbar{
+        height: 54px;
+    }
+    .navbar .responsive-icons img{
+        width: 30px;
+        bottom: 12px;
+    }
+    .navbar .title{top: 35px;}
+    .navbar .title,.navbar .moune,.navbar .shop{font-size: 18px;}
+    .navbar .header-logo img{
+        width: 110px;
+        margin-left: 10px;
+    }
+    /* Navbar responsive */
+    /* Landing */
+    .sec-img .img2{
+        display: none;
+    }
+    .sec-img .img1{
+        width: 100%;
+        height: 600px;
+    }
+    /* Landing */
+}
+@media screen and (max-width:578px){
+    .footer-container .items{
+        width: 100%;
+        left: 0;
+    }
+    .accueil .acc-words .slg{
+        font-size: 40px;
+    }
+    .accueil .acc-words .bvn,.accueil .acc-words .app{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:570px){
+    /* Landing */
+    .sec-img .img1{
+        height: 530px;
+    }
+    /* Landing */
+    /* Carrousel hommes */
+    .h-car-header .car-btn button{
+        width: 50px;
+        height: 50px;
+    }
+    .h-car-header .car-btn button img{
+        width: 20px;
+    }
+    .h-car-header h3{
+        font-size: 18px;
+    }
+    /* Carrousel hommes */
+}
+@media screen and (max-width:540px){
+    .footer-logo{
+        margin-right: 70px;
+    }
+    .carrousel .bt{
+        font-size: 30px;
+    }
+}
+@media screen and (max-width:510px){
+    .footer-container .items{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+        gap: 10px;
+        position: relative;
+    }
+}
+@media screen and (max-width:500px){
+    .sec-img .img1{
+        height:480px;
+    }
+    .accueil .acc-words .bvn,.accueil .acc-words .app{
+        font-size: 20px;
+    }
+    .accueil .btq{
+        left: 36%;
+    }
+    .sportif-choice,.sportif-container{
+        height: 1040px;
+    }
+    .sportif-choice .sec-s1 img,.sportif-choice .sec-s2 img,.I-sport-container .I-s1 img,.I-sport-container .I-s2 img{
+        height: 500px;
+    }
+    .populaire{
+        margin-top: -180px;
+    }
+    /* Carrousel hommes */
+    .h-car-header h3{
+        position: relative;
+        top: -10px;
+    }
+    .h-car-header .car-btn button{
+        width: 40px;
+        height: 40px;
+    }
+    .h-car-header .car-btn button img{
+        width: 15px;
+    }
+    .h-car-header h3{
+        margin-top: 20px;
+    }
+    
+    /* Carrousel hommes */
+    .card{
+        flex: 0 0 55%;
+    }
+}
+@media screen and (max-width:495px){
+    .populaire{
+        position: relative;
+        top: 60px;
+    }
+    .carrousel{
+        margin-top: 80px;
+    }
+}
+@media screen and (max-width:480px){
+    /* Navbar responsive */
+    .navbar .responsive-icons img{right: 20px;}
+    /* Navbar responsive */
+    .accueil .acc-words .slg{
+        font-size: 30px;
+    }
+    .accueil .acc-words .bvn,.accueil .acc-words .app{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:450px){
+    /* Landing */
+    .sec-img .img1{
+        height:400px;
+    }
+    /* Landing */
+    .pop-container img{
+        height: 500px;
+    }
+    /* Carrousel homme */
+    .man-carroussel{
+        margin-top: 10px;
+    }
+    .h-car-header{
+        flex-direction: column;
+    }
+    .h-car-header h3{
+        top: 20px;
+    }
+    .h-car-header .car-btn button{
+        position: relative;
+        left: 80%;
+        top: 20px;
+    }
+    .h-card{
+        width: 350px;
+        height: 350px;
+    }
+    .h-card p{
+        font-size: 23px;
+    }
+    /* Carrousel homme */
+    .carrousel .bt{
+        font-size: 26px;
+    }
+}
+@media screen and (max-width:400px){
+    .sportif-choice,.sportif-container{
+        height: 840px;
+    }
+    .sportif-choice .sec-s1 img,.sportif-choice .sec-s2 img,.I-sport-container .I-s1 img,.I-sport-container .I-s2 img{
+        height: 400px;
+    }
+    .I-sport-container .I-s2{
+        margin-top: -70px;
+    }
+    .footer-logo{
+        margin-right: 90px;
+    }
+    /* Carrousel homme */
+    .h-car-header h3{
+        top: 20px;
+    }
+    .h-car-header .car-btn button{
+        width: 35px;
+        height: 35px;
+        left: 75%;
+        top: 20px;
+    }
+    .h-car-header .car-btn button img{
+        width: 10px;
+    }
+    /* Carrousel homme */
+    .populaire{
+        margin-top: -380px;
+    }
+    .populaire h3{
+        margin-right: 30px;
+        font-size: 18px;
+    }
+    .card{
+        flex: 0 0 65%;
+    }
+}
+@media screen and (max-width:395px){
+     /* Navbar responsive */
+     .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 16px;
+    }
+    .navbar{
+        height: 52px;
+    }
+    .navbar .header-logo img{
+        width: 100px;
+        margin-left: 15px;
+    }
+    
+    .navbar .responsive-icons img{
+        width: 28px;
+        bottom: 15px;
+    }
+    /* Navbar responsive */
+    .accueil .btq{
+        left: 36%;
+    }
+    .footer-container .items{
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:350px){
+    /*Navbar responsive*/
+    .navbar .header-logo img{
+        width: 90px;
+    }
+    .navbar{
+        height: 44px;
+    }
+    .navbar .title{
+        top: 30px;
+        right: 22%;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 12px;
+    }
+    .navbar .responsive-icons img{
+        display: none;
+    }
+    .navbar .responsive-icons #menu{
+        display: block;
+    }
+    /*Navbar responsive*/
+    /* Landing */
+    .sec-img .img1{
+        height:350px;
+    }
+    /* Landing */
+    .accueil .btq{
+        left: 34%;
+    }
+    .sportif-choice,.sportif-container{
+        height: 740px;
+    }
+    .sportif-choice .sec-s1 img,.sportif-choice .sec-s2 img,.I-sport-container .I-s1 img,.I-sport-container .I-s2 img{
+        height: 350px;
+    }
+    .I-sport-container .I-s2{
+        margin-top: -180px;
+    }
+    .pop-container img{
+        height: 400px;
+    }
+    /* Carrousel homme */
+    .h-car-header h3{
+        top: 10px;
+    }
+    .h-car-header .car-btn button{
+        left: 70%;
+        top: 15px;
+    }
+    .populaire{
+        margin-top: -500px;
+    }
+    .populaire h3{
+        margin-right: 40px;
+        font-size: 14px;
+    }
+    .h-card{
+        width: 300px;
+        height: 300px;
+    }
+    .h-card p{
+        font-size: 18px;
+    }
+    .carrousel .bt{
+        font-size: 20px;
+    }
+}

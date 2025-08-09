@@ -1,0 +1,99 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nous contacter</title>
+    <link rel="stylesheet" href="{% static 'Store/CSS/contact.css'%}">
+    <style>
+        .nav-end .search button{
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!--Entete et navbar-->
+    <header>
+        <div class="header-container">
+            <div class="title"><p>M<span class="moune">oune</span>S<span class="shop">hop</span></p></div>
+            <div class="actions">
+                <a href="{% url 'contact'%}">Nous contacter |</a>
+                <a href="{% url 'register_store'%}">Rejoignez-nous |</a>
+                <a href="{% url 'login_store'%}">Se Connecter</a>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="header-logo">
+            <a href="{% url 'index' %}"><img width="180" src="{% static 'Store/icons/logo.png'%}" alt="LOGO"></a>
+        </div>
+        <div class="title"><p>M<span class="moune">oune</span>S<span class="shop">hop</span></p></div>
+        
+        <ul class="items">
+            <li><a href="{% url 'nouveautes' %}">Nouveautés</a></li>
+            <li><a href="{% url 'hommes' %}">Hommes</a></li>
+            <li><a href="{% url 'femmes' %}">Femmes</a></li>
+            <li><a href="{% url 'enfants'%}">Enfants</a></li>
+        </ul>
+
+        <div class="nav-end">
+            <form class="search"> 
+                <input type="search" placeholder="Recherche">
+                <button type="submit"><img loading="lazy" width="30" src="{% static 'Store/icons/search.png'%}" alt=""></button>
+            </form>
+            <div class="end-icon">
+                <a id="compte" href="{%url 'detail_utilisateur'%}"><img width="30" src="{% static 'Store/icons/person.png'%}" loading="lazy" alt=""></a>
+                <a id="sac" href="{%url 'voir_panier'%}">
+                    <img width="30" src="{% static 'Store/icons/shopping_bag.png'%}" loading="lazy" alt="">
+                    {%if panier%}
+                        <div class="red-disc"></div>
+                    {%endif%}
+                    <div class="box">
+                        <p>{{user.username}} connecté(e)</p>
+                        <p>cliquer pour voir les details</p>
+                    </div>
+                </a>          
+            </div>
+            
+        </div>
+        <div class="responsive-icons">
+            <a id="search" href=""><img src="{% static 'Store/icons/search.png'%}" alt=""></a>
+            <a href="login.html"><img src="{% static 'Store/icons/person.png'%}" alt=""></a>
+            <a href="">
+                <img src="{% static 'Store/icons/shopping_bag.png'%}" alt="">
+                {%if panier%}
+                    <div class="red-disc"></div>
+                {%endif%}
+            </a>
+            <a href=""><img id="menu" src="{% static 'Store/icons/Menu.png'%}" alt=""></a>
+        </div>
+        <div class="banner">
+            <div class="ban-head"><img id="croix" src="{% static 'Store/icons/croix.png'%}" alt=""></div>
+            <a href="{% url 'index'%}">Accueil</a>
+            <a href="{% url 'nouveautes'%}">Nouveautés</a>
+            <a href="{% url 'boutique' %}">Boutique</a>
+            <a href="{% url 'hommes' %}">Hommes</a>
+            <a href="{% url 'femmes'%}">Femmes</a>
+            <a href="{% url 'enfants' %}">Enfants</a>
+            <a href="{% url 'contact'%}">Nous contacter</a>
+            <a href="{% url 'register_store'%}">Rejoignez-nous</a>
+            <a href="{% url 'login_store'%}">Se Connecter</a>
+        </div>
+    </nav>
+    <!--Entete et navbar-->
+
+    <!--Formulaire d'aide-->
+    <div class="wrapper">
+        <form method="post" class="aide">
+            <p>Nous contacter</p>
+            <input type="text" class="msg" placeholder="Envoyer un Email">
+            <input type="submit" class="submit">
+        </form>
+    </div>
+    <!--Formulaire d'aide-->
+    <script src="{% static 'Store/JS/style-responsive.js' %}"></script>
+</body>
+</html>

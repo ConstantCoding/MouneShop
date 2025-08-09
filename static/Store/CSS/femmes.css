@@ -1,0 +1,988 @@
+*{
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Bauhaus 93';
+    src: url('../fonts/BAUHS93.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+/* ENTETE ET NAVBAR*/
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(128, 128, 128,0.1);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.navbar .header-logo{
+    margin-left: -50px;
+}
+.actions{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-top: 12px;
+}
+.actions a{
+    color: black;
+    font-weight: 550;
+    font-family: arial;
+    font-size: 15px;
+}
+.navbar{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    z-index: 200;
+    top: 47px;
+    width: 100%;
+    background-color:white;
+    box-shadow: 0 5px 6px rgba(128, 128, 128, 0.1);
+}
+
+.nav-end{ 
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;  
+}
+.search{display: flex;}
+.nav-end .search input{
+    width: 200px;
+    height: 38px;
+    padding: 0 35px;
+    border-radius: 30px;
+    border-color: rgba(128, 128, 128, 0.1);
+    border: none;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+.nav-end .search input::placeholder{
+    color: rgba(128, 128, 128, 1);
+    position: relative;
+    left: 10px;
+    font-size: 18px;
+}
+.navbar .nav-end{
+    margin-right: 80px;
+    margin-top:17px;
+}
+.nav-end .end-icon{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;  
+}
+.nav-end .end-icon img{
+    margin-left:40px;
+    margin-top: 3%;
+}
+.nav-end .end-icon #compte{
+    position: relative;
+    left: 10%;
+}
+
+.nav-end .end-icon #sac .box{
+    position: absolute;
+    right: 90px;
+    width: 100px;
+    height: 120px;
+    background-color: #ccc8c8;
+    border-radius: 3px;
+    z-index: 2000;
+    display: none;
+}
+.nav-end .end-icon #sac .box::before{
+    position: absolute;
+    left: 79px;
+    top: -7px;
+    content: "";
+    height: 18px;
+    width: 18px;
+    background-color: #ccc8c8;
+    transform: rotate(50deg);
+}
+.nav-end .end-icon #sac .box p{
+    color: black;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 10px;
+}
+.nav-end .end-icon #sac .box p:last-child{
+    font-style: italic;
+}
+
+.nav-end .end-icon .red-disc,
+.responsive-icons .red-disc {
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 35px;
+    right: 55px;
+}
+
+.nav-end .search{
+    position: relative;
+    left: 10%;
+}
+.nav-end .search img{
+    position: absolute;
+    top: 12%;
+    left: 3%;  
+}
+.header-container .title{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.navbar .items{
+    /*background-color: red;*/
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    font-size: 18px;
+    font-family: "helvetica";
+    font-weight: bolder;
+    width: 40%;
+    margin-top: 5px;
+    margin-left: 35px;
+}
+.navbar .items a{color: black;}
+
+.header-container .title,.navbar .title{
+    margin-top: -2px;
+    font-size: 40px;
+    font-weight: bolder;
+    text-decoration:underline;
+}
+.header-container .moune,.header-container .shop,.navbar .moune,.navbar .shop{
+    font-size: 30px;
+    font-variant: small-caps;
+}
+.h-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 160px;
+    font-family: Arial;
+}
+.navbar .responsive-icons img{
+    width: 40px;
+}
+.navbar .title,.navbar .responsive-icons{display: none;}
+.navbar .banner{
+    display: none;
+}
+/* ENTETE ET NAVBAR*/
+/* Landing */
+.land-container{
+    margin-top: 40px;
+    width: 100%;
+    height: 600px;
+}
+.l-img{
+    display: flex;
+    height: 100%;
+}
+.l-img img{
+    width: 50%;
+    height: 100%;
+}
+
+.land-container p{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top:-300px;
+    margin-left: 40px;
+    text-align:left;
+    font-size: 46px;
+    z-index: 2;
+}
+.land-container button,.left .l1 button,.left .l2 button,.right .r1 button,.right .r2 button{
+    position: relative;
+    left: 48%;
+    margin-top: 15px;
+    margin-top: 20px;
+    height: 40px;
+    width: 110px;
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    border:none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+.land-container button{
+    left: 3%;
+}
+/* Landing */
+
+/* A la mode */
+.trend{
+    margin-top: 60px;
+}
+.trend .t-title{
+    margin-left: 40px;
+    font-size: 26px;
+    font-family: Arial;
+}
+.grid-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+}
+
+.grid-item {
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.grid-item.full-width .grid-img{
+    display: flex;
+}
+.grid-item.full-width .grid-img img{
+    width: 50%;
+    height: 530px;
+}
+.grid-item.grid-left img,.grid-item.grid-right img{
+    width: 100%;
+    height: 400px;
+}
+.grid-item h3 {
+    margin-top: 0;
+    color:black;
+    font-size: 1.5rem;
+    font-family: Arial;
+}
+.grid-item button{
+    position:relative;
+    height: 40px;
+    width: 110px;
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    border:none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+    text-align: center;
+}
+/* A la mode */
+/* carroussel Femmes */
+
+.w-carroussel{
+    margin-top: 40px;
+}
+.w-car-header{
+    display: flex;
+    justify-content: space-between;
+}
+.w-car-header h3{
+    margin: 16px 0 0 40px;
+    font-family: Arial;
+    font-size: 1.5em;
+}
+.car-btn{
+    margin-right: 20px;
+}
+.car-btn button{
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+}
+.car-btn button:hover{
+    background-color: rgb(221, 213, 213);
+}
+.car-btn button:first-child{
+    margin-right: 10px;
+}
+.car-btn button img{
+    width: 25px;
+    position: relative;
+    top: 3px;
+}
+.w-car-container{
+    margin-top: 10px;
+    margin-left: 40px;
+}
+.w-card{
+    width: 500px;
+    height: 500px;
+    margin-left: -30px;
+}
+.w-card img{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.w-card p{
+    font-size: 26px;
+    color:white;
+    font-family: Arial;
+    margin-top: 10px;
+}
+.w-card p,.w-card button{
+    position: relative;
+    bottom: 150px;
+    margin-left: 30px;
+}
+.w-wrapper{
+    display: flex;
+    overflow: hidden;
+}
+.w-card .btq,.ex-container button{
+    height: 40px;
+    width: 110px;
+    background-color: white;
+    color: black;
+    border-radius: 30px;
+    border:none;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+/* carroussel femmes */
+
+/* Exploration */
+.exploration{
+    margin-top: 70px;
+}
+
+.ex-container .p1{
+    margin-top: -250px;
+    color: white;
+    margin-left: 40px;
+    font-family: Arial;
+    font-size: 1.5em;
+}
+.ex-container .p2{
+    color: white;
+    font-family: Impact;
+    font-size: 5em;
+}
+.ex-container .p2, .ex-container button{
+    margin-left: 40px;
+}
+.ex-container .img-container{
+    display: flex;
+    height: 600px;
+}
+.ex-container .img-container img{
+    width: 50%;
+    height: 100%;
+}
+
+/* Exploration */
+/* Carrousel Femmes 2 */
+.w-car-container a{
+    color: black;
+    margin-left: -20px;
+    text-decoration: underline;
+    font-weight: bolder;
+    font-family: Arial;
+}
+.w-carroussel.deux{
+    margin-top: 100px;
+}
+/* Carrousel Femmes 2 */
+
+/*SECTION CARROUSEL*/
+.carrousel .bt{
+    margin-top: 40px;
+    margin-left: 45px;
+    text-transform: uppercase;
+    font-family: "Bauhaus 93";
+    font-size: 46px;
+}
+
+.gallery-wrap {
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.gallery-wrap button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    font-size: 22px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#backBtn {
+    position: absolute;
+    left: 10px;
+}
+
+#nextBtn {
+    position: absolute;
+    right: 10px;
+}
+
+.gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 5px;
+    width: 100%;
+}
+
+.gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    flex: 0 0 25%;
+    box-sizing: border-box;
+    padding: 5px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background: #000;
+    border-radius: 10px;
+}
+
+.card p {
+    margin: 10px 0 0;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bolder;
+    text-decoration: none;
+    position: relative;
+    bottom: 18%;
+}
+/*SECTION CARROUSEL*/
+
+/*PIED DE PAGE*/
+.footer-logo{
+    display: flex;
+    justify-content: center;
+}
+.footer-logo img{
+    margin-top: 70px;
+    width: 180px;
+}
+.footer-container .items{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 35px;
+    width: 46%;
+    position: relative;
+    left:30%;
+}
+.footer-container .items a{
+    color: black;
+    font-weight: 550;
+    font-family: arial;
+    font-size: 18px;
+}
+footer p{
+    margin-top: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 18px;
+    font: arial;
+}
+/*PIED DE PAGE*/
+
+@media screen and (max-width:1180px){
+    .h-title{
+        margin-top: 40px;
+    }
+    header{display: none;}
+    .navbar{
+        position: relative;
+        top: 0;
+        height: 100px;
+    }
+    .navbar .items,.navbar .nav-end{
+        display: none;
+    }
+    .navbar .title{
+        display: block;
+        position: relative;
+        right: 21%;
+        top: 55px;
+    }
+
+    .responsive-icons .red-disc {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        bottom: 46px;
+        left: 4px;
+    }
+
+
+    .navbar .responsive-icons{
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        gap: 8%;
+    }
+    .navbar .responsive-icons img{margin-top: 25px;}
+    
+    /*Bannière responsive */
+    .navbar .banner{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #fff;
+        margin-right: -60%;   
+    }
+    .navbar .banner.ban-responsive{
+        display: flex;
+        margin-right: -60%;
+        animation: appear 0.6s forwards ease;
+    }
+    @keyframes appear{
+        to{
+            margin-right: 0;
+        }
+    }
+    .navbar .banner a{
+        color: black;
+        font-size: 1.5em;
+        font-weight: 500;
+        font-family: Arial;
+        margin-top: 15px;
+        padding-left: 20px;
+    }
+    .navbar .ban-head{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navbar .banner img{
+        width: 30px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    /*Bannière responsive */
+    .land-container p{
+        margin-top:-200px;
+    }
+
+    .trend{
+        margin-top: 60px;
+    }
+    .right .r2 img{
+        height: 550px;
+    }
+    .card{
+        flex: 0 0 30%;
+    }
+    /* Pied de page */
+    .footer-container .items{
+        width: 55%;
+        left: 28%;
+    }
+    /* Pied de page */
+}
+
+@media screen and (max-width:940px){
+    /* Navbar responsive */
+    .navbar .responsive-icons img{
+        width: 35px;
+        margin-top: 30px;
+        position: relative;
+        right: 25px;
+    }
+    .navbar{
+        height: 80px;
+    }
+    .navbar .title{
+        position: relative;
+        top: 48px;
+    }
+    
+    .navbar .header-logo img{
+        width: 150px;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 26px;
+    }
+    .ex-container .img-container{
+        height: 500px;
+    }
+    .ex-container .img-container img{
+        height: 100%;
+    }
+    /* Navbar responsive */
+    .land-container{
+        height: 440px;
+    }
+    .grid-item.grid-left img,.grid-item.grid-right img{
+        height: 300px;
+    }
+    .grid-item.full-width .grid-img img{
+        height: 400px;
+    }
+}
+@media screen and (max-width:900px) {
+    .footer-container .items{
+        width: 60%;
+        left: 26%;
+    }
+}
+@media screen and (max-width:850px){
+    .card{
+        flex: 0 0 35%;
+    }
+    .footer-container .items{
+        width: 70%;
+        left: 24%;
+    }
+}
+@media screen and (max-width:800px){
+    .land-container{
+        height: 600px;
+    }
+    .land-container .l-img img:last-child{
+        display: none;
+    }
+    .land-container .l-img img:first-child{
+        width: 100%;
+        height: 100%;
+    }
+    .land-container p{
+        margin-top: -300px;
+    }
+    .land-container button{
+        left: 5%;
+    }
+}
+@media screen and (max-width:740px){
+    .footer-container .items{
+        width: 80%;
+        left: 16%;
+    }
+    .ex-container .img-container{
+        height: 400px;
+    }
+    
+    .ex-container .p2{
+        font-size: 50px;
+    }
+
+}
+@media screen and (max-width:700px){
+    /* Navbar responsive */
+    .navbar .header-logo img{
+        width: 130px;
+    }
+    .navbar .title{
+        top: 42px;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 20px;
+    }
+    .navbar{height: 65px;}
+    .navbar .responsive-icons img{
+        bottom: 10px;
+    }
+    /* Navbar responsive */
+    .grid-item.grid-left img,.grid-item.grid-right img{
+        height: 200px;
+    }
+    .grid-item.full-width .grid-img img{
+        height: 300px;
+    }
+    .grid-item h3{
+        font-size: 18px;
+    }
+    .grid-item button{
+        width: 100px;
+        height: 35px;
+    }
+    .card{
+        flex: 0 0 45%;
+    }
+    .gallery-wrap button{
+        display: none;
+    }
+}
+@media screen and (max-width:680px){
+    .carrousel .bt{
+        font-size: 40px;
+        text-align: center;
+    }
+    .carrousel{
+        margin-top: 40px;
+    }
+}
+@media screen and (max-width:650px){
+    .land-container p{
+        margin-top: -250px;
+    }
+
+    .w-card{
+        width: 400px;
+        height: 400px;
+    }
+    .footer-container .items{
+        width: 90%;
+        left: 8%;
+    }
+    .footer-logo{
+        margin-right: 40px;
+    }
+    .ex-container .img-container{
+        height:900px;
+    }
+    .ex-container .img-container{
+        flex-direction: column;
+    }
+    .ex-container .img-container img{
+        width: 100%;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width:600px){
+    /* Navbar responsive */
+    .navbar{
+        height: 54px;
+    }
+    .navbar .responsive-icons img{
+        width: 30px;
+        bottom: 12px;
+    }
+    .navbar .title{top: 35px;}
+    .navbar .title,.navbar .moune,.navbar .shop{font-size: 18px;}
+    .navbar .header-logo img{
+        width: 110px;
+        margin-left: 10px;
+    }
+    /* Navbar responsive */
+}
+@media screen and (max-width:578px){
+    .footer-container .items{
+        width: 100%;
+        left: 0;
+    }
+    .carrousel .bt{
+        font-size: 1.8rem;
+    }
+}
+@media screen and (max-width:570px){
+    .w-car-header .car-btn button{
+        width: 50px;
+        height: 50px;
+    }
+    .w-car-header .car-btn button img{
+        width: 20px;
+    }
+    .w-car-header h3{
+        font-size: 21px;
+    }
+    .land-container p{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:540px){
+    .footer-logo{
+        margin-right: 70px;
+    }
+    .land-container{
+        height: 400px;
+    }
+}
+@media screen and (max-width:510px){
+    .footer-container .items{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+        gap: 10px;
+        position: relative;
+    }
+}
+@media screen and (max-width:500px){
+    .w-car-header .car-btn button{
+        width: 40px;
+        height: 40px;
+    }
+    .w-car-header .car-btn button img{
+        width: 15px;
+    }
+    .w-car-header h3{
+        font-size: 18px;
+    }
+    .grid-item h3{
+        font-size: 15px;
+    }
+    .card{
+        flex: 0 0 55%;
+    }
+}
+@media screen and (max-width:480px){
+    .land-container p{
+        margin-top: -180px;
+        font-size: 35px;
+    }
+
+    /* Navbar responsive */
+    .navbar .responsive-icons img{right: 20px;}
+    /* Navbar responsive */
+}
+@media screen and (max-width:450px){
+    .w-car-header{
+        flex-direction: column;
+    }
+    .w-car-header h3{
+        position: relative;
+        top: 20px;
+    }
+    .w-car-header .car-btn button{
+        position: relative;
+        left: 80%;
+        top: 20px;
+    }
+    .w-card{
+        width: 350px;
+        height: 350px;
+    }
+    .w-card p{
+        font-size: 23px;
+    }
+    .grid-item.grid-left img,.grid-item.grid-right img{
+        height: 120px;
+    }
+    .grid-item.full-width .grid-img img{
+        height: 200px;
+    }
+    .carrousel .bt{
+        font-size: 1.5rem;
+    }
+}
+@media screen and (max-width:430px){
+    .land-container p{
+        font-size: 30px;
+    }
+    .land-container button{
+        left: 9%;
+    }
+}
+@media screen and (max-width:400px){
+    .w-car-header .car-btn button{
+        width: 35px;
+        height: 35px;
+        left: 75%;
+        top: 20px;
+    }
+    .w-car-header .car-btn button img{
+        width: 10px;
+    }
+    .card{
+        flex: 0 0 65%;
+    }
+    .footer-logo{
+        margin-right: 90px;
+    }
+    .land-container{
+        height: 350px;
+    }
+}
+@media screen and (max-width:395px){
+    /* Navbar responsive */
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 16px;
+    }
+    .navbar{
+        height: 52px;
+    }
+    .navbar .header-logo img{
+        width: 100px;
+        margin-left: 15px;
+    }
+    
+    .navbar .responsive-icons img{
+        width: 28px;
+        bottom: 15px;
+    }
+    /* Navbar responsive */
+}
+@media screen and (max-width:390px){
+    .land-container p{
+        font-size: 20px;
+    }
+    .footer-container .items{
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:350px){
+    /*Navbar responsive*/
+    .navbar .header-logo img{
+        width: 90px;
+    }
+    .navbar{
+        height: 44px;
+    }
+    .navbar .title{
+        top: 30px;
+        right: 22%;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 12px;
+    }
+    .navbar .responsive-icons img{
+        display: none;
+    }
+    .navbar .responsive-icons #menu{
+        display: block;
+    }
+    /*Navbar responsive*/
+    .w-car-header h3{
+        top: 10px;
+    }
+    .w-car-header .car-btn button{
+        left: 70%;
+        top: 15px;
+    }
+    .populaire{
+        margin-top: -500px;
+    }
+    .populaire h3{
+        margin-right: 40px;
+        font-size: 14px;
+    }
+    .w-card{
+        width: 300px;
+        height: 300px;
+    }
+    .w-card p{
+        font-size: 18px;
+    }
+}

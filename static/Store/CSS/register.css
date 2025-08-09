@@ -1,0 +1,484 @@
+*{
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Bauhaus 93';
+    src: url('../fonts/BAUHS93.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+.main{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 105vh;
+}
+
+/* ENTETE ET NAVBAR*/
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(128, 128, 128,1);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.navbar .header-logo{
+    margin-left: -50px;
+}
+.actions{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-top: 12px;
+}
+.actions a{
+    color: white;
+    font-weight: 550;
+    font-family: arial;
+    font-size: 15px;
+}
+.navbar{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    z-index: 200;
+    top: 47px;
+    width: 100%;
+    background-color:white;
+    box-shadow: 0 5px 6px rgba(128, 128, 128, 0.1);
+}
+
+.nav-end{ 
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;  
+}
+.search{display: flex;}
+.nav-end .search input{
+    width: 200px;
+    height: 38px;
+    padding: 0 35px;
+    border-radius: 30px;
+    border-color: rgba(128, 128, 128, 0.1);
+    border: none;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+.nav-end .search input::placeholder{
+    color: rgba(128, 128, 128, 1);
+    position: relative;
+    left: 10px;
+    font-size: 18px;
+}
+.navbar .nav-end{
+    margin-right: 80px;
+    margin-top:17px;
+}
+.nav-end .end-icon{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;  
+}
+.nav-end .end-icon img{
+    margin-left:40px;
+    margin-top: 3%;
+}
+
+.nav-end .end-icon #sac .box{
+    position: absolute;
+    right: 90px;
+    width: 100px;
+    height: 120px;
+    background-color: #ccc8c8;
+    border-radius: 3px;
+    z-index: 2000;
+    display: none;
+}
+.nav-end .end-icon #sac .box::before{
+    position: absolute;
+    left: 79px;
+    top: -7px;
+    content: "";
+    height: 18px;
+    width: 18px;
+    background-color: #ccc8c8;
+    transform: rotate(50deg);
+}
+.nav-end .end-icon #sac .box p{
+    color: black;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 10px;
+}
+.nav-end .end-icon #sac .box p:last-child{
+    font-style: italic;
+}
+
+.nav-end .end-icon #compte{
+    position: relative;
+    left: 10%;
+}
+.nav-end .search{
+    position: relative;
+    left: 10%;
+}
+.nav-end .search img{
+    position: absolute;
+    top: 12%;
+    left: 3%;  
+}
+.header-container .title{
+    margin-left: 30px;
+}
+
+.navbar .items{
+    /*background-color: red;*/
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    font-size: 18px;
+    font-family: "helvetica";
+    font-weight: bolder;
+    width: 40%;
+    margin-top: 5px;
+    margin-left: 35px;
+}
+.navbar .items a{color: black;}
+
+.header-container .h-title,.navbar .title{
+    margin-top: -2px;
+    font-size: 40px;
+    font-weight: bolder;
+    text-decoration:underline;
+    color:white;
+}
+.header-container .moune,.header-container .shop,.navbar .moune,.navbar .shop{
+    font-size: 30px;
+    font-variant: small-caps;
+}
+.navbar .responsive-icons img{
+    width: 40px;
+}
+
+.h-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 160px;
+    font-family: Arial;
+}
+.navbar .responsive-icons,.navbar .title{
+    display: none;
+}
+.navbar .banner{
+    display: none;
+}
+/* ENTETE ET NAVBAR*/
+/* Formulaire d'inscription */
+.wrapper{
+    width: 100%;
+    height: 105vh;
+    background-color: rgba(39, 39, 39, 0.4)
+}
+form{
+    position: relative;
+    width: 512px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 420px;
+    overflow: hidden;
+    overflow-y: visible;
+    z-index: 2;
+    top: 120px;
+    margin: auto auto;
+}
+.top span{
+    color: #fff;
+    margin-left: 5px;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+.top span a{
+    color: #fff;
+    font-weight: 500;
+    margin-left: 5px;
+}
+.title{
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+
+.message.error{
+    color: red;
+    text-align: center;
+    font-size: 18px;
+    font-family: Arial;
+}
+
+.two-forms{
+    display: flex;
+    gap: 10px;
+}
+.input-field{
+    font-size: 15px;
+    background-color: rgba(255,255,255,0.3);
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    transition: .2s ease;
+}
+
+.input-field:hover,.input-field:focus{
+    background: rgba(255,255,255,0.35);
+}
+.input-field::placeholder{
+    color: #fff;
+    font-weight: bolder;
+}
+.submit{
+    font-size: 15px;
+    font-weight: bolder;
+    color: black;
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline:none;
+    background-color: rgba(255,255,255,0.7);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    margin-top: 25px;
+}
+.submit:hover{
+    background-color: rgba(255,255,255,0.5);
+    box-shadow: 1px 5px 7px 1px rgba(255,255,255,0.2);
+}
+.two-col{
+    display: flex;
+    gap: 175px;
+    color: #fff;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.two label a{
+    color: #fff;
+}
+.two label a:hover{
+    text-decoration: underline;
+}
+form::-webkit-scrollbar{
+    display: none;
+}
+/* Formulaire d'inscription */
+@media screen and (max-width:1180px){
+    header{display: none;}
+    .navbar{
+        position: relative;
+        top: 0;
+        height: 100px;
+    }
+    .navbar .items,.navbar .nav-end{
+        display: none;
+    }
+    .navbar .title{
+        display: block;
+        position: relative;
+        right: 21%;
+        top: 40px;
+        color: black;
+    }
+    .navbar .responsive-icons{
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        gap: 8%;
+    }
+    .navbar .responsive-icons img{margin-top: 25px;}
+    /*Bannière responsive */
+    .navbar .banner{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #fff;
+        margin-right: -60%;   
+    }
+    .navbar .banner.ban-responsive{
+        display: flex;
+        margin-right: -60%;
+        animation: appear 0.6s forwards ease;
+    }
+    @keyframes appear{
+        to{
+            margin-right: 0;
+        }
+    }
+    .navbar .banner a{
+        color: black;
+        font-size: 1.5em;
+        font-weight: 500;
+        font-family: Arial;
+        margin-top: 15px;
+        padding-left: 20px;
+    }
+    .navbar .ban-head{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navbar .banner img{
+        width: 30px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    /*Bannière responsive */
+    /*formulaire responsive*/
+    .main{
+        position: relative;
+        top: -80px;
+    }
+    
+    .register-container{
+        width: 100%;
+        height: 100%;
+    }
+    /*formulaire responsive*/
+}
+@media screen and (max-width:940px){
+    /* Navbar responsive */
+    .navbar .responsive-icons img{
+        width: 35px;
+        margin-top: 30px;
+        position: relative;
+        right: 25px;
+    }
+    .navbar{
+        height: 80px;
+    }
+    .navbar .header-logo img{
+        width: 150px;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 26px;
+    }
+    /* Navbar responsive */
+}
+@media screen and (max-width:700px){
+    /* Navbar responsive */
+    .navbar .header-logo img{
+        width: 130px;
+    }
+    .navbar .title{
+        top: 30px;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 20px;
+    }
+    .navbar{height: 65px;}
+    .navbar .responsive-icons img{
+        bottom: 10px;
+    }
+    /* Navbar responsive */
+    /*Formulaire responsive */
+    .main,.wrapper{
+        height: 110vh;
+    }
+    /*Formulaire responsive */
+}
+@media screen and (max-width:600px){
+    /* Navbar responsive */
+    .navbar{
+        height: 54px;
+    }
+    .navbar .responsive-icons img{
+        width: 30px;
+        bottom: 12px;
+    }
+    .navbar .title{top: 25px;}
+    .navbar .title,.navbar .moune,.navbar .shop{font-size: 18px;}
+    .navbar .header-logo img{
+        width: 110px;
+        margin-left: 10px;
+    }
+    /* Navbar responsive */
+    /*Formulaire responsive */
+    form{
+        width: 400px;
+    }
+    .two-col{
+        gap: 80px;
+    }
+    /*Formulaire responsive */
+}
+@media screen and (max-width:480px){
+    /* Navbar responsive */
+    .navbar .responsive-icons img{right: 20px;}
+    /* Navbar responsive */
+}
+@media screen and (max-width:450px){
+    /*Formulaire responsive */
+    form{
+        width: 300px;
+    }
+    /*Formulaire responsive */
+}
+@media screen and (max-width:395px){
+    /* Navbar responsive */
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 16px;
+    }
+    .navbar{
+        height: 52px;
+    }
+    .navbar .header-logo img{
+        width: 100px;
+        margin-left: 15px;
+    }
+    
+    .navbar .responsive-icons img{
+        width: 28px;
+        bottom: 15px;
+    }
+    /* Navbar responsive */
+}
+@media screen and (max-width:350px){
+    /*Navbar responsive*/
+    .navbar .header-logo img{
+        width: 90px;
+    }
+    .navbar{
+        height: 44px;
+    }
+    .navbar .title{
+        top: 20px;
+        right: 22%;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 12px;
+    }
+    .navbar .responsive-icons img{
+        display: none;
+    }
+    .navbar .responsive-icons #menu{
+        display: block;
+    }
+    /*Navbar responsive*/
+}

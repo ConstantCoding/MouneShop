@@ -1,0 +1,669 @@
+*{
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: 'Bauhaus 93';
+    src: url('../fonts/BAUHS93.TTF');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ENTETE ET NAVBAR*/
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(128, 128, 128,0.1);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+.navbar .header-logo{
+    margin-left: -50px;
+}
+.actions{
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;
+    margin-top: 12px;
+}
+.actions a{
+    color: black;
+    font-weight: 550;
+    font-family: arial;
+    font-size: 15px;
+}
+.navbar{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    z-index: 200;
+    top: 47px;
+    width: 100vw;
+    background-color:white;
+    box-shadow: 0 5px 6px rgba(128, 128, 128, 0.1);
+}
+
+.nav-end{ 
+    width: 22%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30px;  
+}
+.search{display: flex;}
+.nav-end .search input{
+    width: 200px;
+    height: 38px;
+    padding: 0 35px;
+    border-radius: 30px;
+    border-color: rgba(128, 128, 128, 0.1);
+    border: none;
+    background-color: rgba(128, 128, 128, 0.1);
+}
+.nav-end .search input::placeholder{
+    color: rgba(128, 128, 128, 1);
+    position: relative;
+    left: 10px;
+    font-size: 18px;
+}
+.navbar .nav-end{
+    margin-right: 80px;
+    margin-top:17px;
+}
+.nav-end .end-icon{
+    display: flex;
+    width: 80%;
+    justify-content: space-between;  
+}
+.nav-end .end-icon img{
+    margin-left:40px;
+    margin-top: 3%;
+}
+.nav-end .end-icon #compte{
+    position: relative;
+    left: 10%;
+}
+
+.nav-end .end-icon #sac .box{
+    position: absolute;
+    right: 90px;
+    width: 100px;
+    height: 120px;
+    background-color: #ccc8c8;
+    border-radius: 3px;
+    z-index: 2000;
+    display: none;
+}
+.nav-end .end-icon .red-disc,
+.responsive-icons .red-disc {
+    width: 12px;
+    height: 12px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 25px;
+    left: 100px;
+}
+.nav-end .end-icon #sac .box::before{
+    position: absolute;
+    left: 79px;
+    top: -7px;
+    content: "";
+    height: 18px;
+    width: 18px;
+    background-color: #ccc8c8;
+    transform: rotate(50deg);
+}
+.nav-end .end-icon #sac .box p{
+    color: black;
+    font-family: Arial;
+    text-align: center;
+    padding-top: 10px;
+}
+.nav-end .end-icon #sac .box p:last-child{
+    font-style: italic;
+}
+
+.nav-end .search{
+    position: relative;
+    left: 10%;
+}
+.nav-end .search img{
+    position: absolute;
+    top: 12%;
+    left: 3%;  
+}
+.header-container .title{
+    margin-left: 30px;
+    margin-top: 10px;
+}
+
+.navbar .items{
+    /*background-color: red;*/
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    font-size: 18px;
+    font-family: "helvetica";
+    font-weight: bolder;
+    width: 40%;
+    margin-top: 5px;
+    margin-left: 35px;
+}
+.navbar .banner{
+    display: none;
+}
+.navbar .items a{color: black;}
+
+.header-container .title,.navbar .title{
+    margin-top: -2px;
+    font-size: 40px;
+    font-weight: bolder;
+    text-decoration:underline;
+}
+.header-container .moune,.header-container .shop,.navbar .moune, .navbar .shop{
+    font-size: 30px;
+    font-variant: small-caps;
+}
+.navbar .responsive-icons img{
+    width: 40px;
+}
+.navbar .responsive-icons,.navbar .title{display: none;}
+
+/* ENTETE ET NAVBAR*/
+
+/*Sidebar et contenu*/
+.btq_nav{
+    margin-top: 160px;
+    display: flex;
+    background-color: white;
+    z-index: 1000;
+}
+.nav-responsive{
+    display: none;
+}
+.btq_nav img{
+    display: none;
+}
+.btq_nav .categories-box{
+    display: none;
+}
+.btq_nav h2{margin-left: 35px;}
+.sidebar{
+    position: fixed;
+    width: 20%;
+    top: 193px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+}
+.sidebar h2{
+    margin-left: 35px;
+    margin-top: 30px;
+    font-size: 30px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: 'Times New Roman', Times, serif
+}
+.sidebar ul li{
+    margin: 20px 0 0 35px;  
+    font-size: 20px;
+}
+.sidebar ul li a{
+    color: black;
+    font-weight: bolder;
+    transition: 0.4s;
+}
+.sidebar ul li a:hover{margin-left: 20px;}
+
+.main{
+    margin-left: 21%;
+    background-color:white;
+}
+
+.wrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,300px));
+    justify-content: center;
+    gap: 10px;
+    background-color: #fff;
+}
+
+.card{
+    width: 300px;
+    background-color: #fff;
+    margin-top: 20px; 
+}
+.card img{
+    width: 100%;
+    height: 300px;
+    transition: .3s;
+    box-shadow: 0 0 2px rgba(0,0,0,1);
+}
+
+.card a .title{
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.card a .new{
+    color: rgb(255, 115, 115);
+    font-family: Tahoma;
+    font-size: 1em;
+}
+.card a .description{
+    color: gray;
+    font-family: verdana;
+}
+.card a .price{
+    color: black;
+    font-weight: bolder;
+    font-family: "Arial Black";
+    margin-top: 10px;
+    transition: 0.4s;
+}
+.card a .price:hover{
+    margin-left: 10px;
+    letter-spacing: 5px;
+}
+
+/*Sidebar et contenu*/
+/*Pied de page */
+.footer-logo img{
+    width: 180px;
+    margin-top: 80px;
+    position: relative;
+    left: 35%;
+}
+.footer-container{
+    position: relative;
+    width: 60%;
+    left: 18%;
+}
+.footer-container .items{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-container .items a{
+    color: black;
+    font-weight: 550;
+    font-family: arial;
+    font-size: 18px;
+}
+footer p{
+    margin-top: 40px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 18px;
+    font: arial;
+    position: relative;
+}
+/*Pied de page */
+
+@media screen and (max-width:1180px){
+    header{display: none;}
+    .navbar{
+        position: relative;
+        top: 0;
+        height: 100px;
+    }
+    .navbar .items,.navbar .nav-end{
+        display: none;
+    }
+    .navbar .title{
+        display: block;
+        position: relative;
+        right: 21%;
+        top: 55px;
+    }
+    .navbar .responsive-icons{
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        gap: 8%;
+        margin-right: 30px;
+    }
+    .navbar .responsive-icons img{margin-top: 25px;}
+    .navbar .responsive-icons {
+        display: flex;
+        width: 50%;
+        justify-content: flex-end;
+        gap: 8%;
+    }
+
+    .responsive-icons .red-disc {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        bottom: 46px;
+        left: 4px;
+    }
+ 
+    .btq_nav{
+        margin-top: 10px;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav-responsive{
+        display: flex;
+        width: 60%;
+        height: 100%;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 4px;
+        margin-right: 15px;
+    }
+    .nav-responsive a{
+        color: black;
+        font-weight: bolder;
+        font-family: Arial;
+        font-size: 1em;
+    }
+    .nav-responsive img{
+        display: none;
+    }
+    /*Bannière responsive */
+    .navbar .banner{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #fff;
+        margin-right: -60%;
+        z-index: 1000;
+    }
+    .navbar .banner.ban-responsive{
+        display: flex;
+        margin-right: -60%;
+        animation: appear 0.6s forwards ease;
+    }
+    @keyframes appear{
+        to{
+            margin-right: 0;
+        }
+    }
+    .navbar .banner a{
+        color: black;
+        font-size: 1.5em;
+        font-weight: 500;
+        font-family: Arial;
+        margin-top: 15px;
+        padding-left: 20px;
+    }
+    .navbar .ban-head{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .navbar .banner img{
+        width: 30px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    /*Bannière responsive */
+    .sidebar{
+        display: none;
+    }
+    .main{
+        margin-left: 0;
+    }
+    .wrapper{
+        grid-template-columns: repeat(auto-fit,minmax(100px,200px));
+        justify-content: center;
+        gap: 15px;
+    }
+    .card{
+        width: 210px;
+    }
+    .card img{
+        height: 210px;
+    }
+    .card .title{
+        font-size: 18px;
+    }
+    .card .description{
+        font-size: 14px;
+    }
+    /* Pied de page */
+    .footer-container .items{
+        width: 100%;
+        left: 28%;
+    }
+    /* Pied de page */
+}
+@media screen and (max-width:940px){
+    /* Navbar responsive */
+    .navbar .responsive-icons img{
+        width: 35px;
+        margin-top: 30px;
+        position: relative;
+    }
+    .navbar{
+        height: 80px;
+    }
+    .navbar .header-logo img{
+        width: 150px;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 26px;
+    }
+    /* Navbar responsive */
+}
+
+@media screen and (max-width:840px){
+    .footer-container .items{
+        width: 100%;
+        display: grid;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+        gap: 10px
+}
+@media screen and (max-width:800px){
+    .btq_nav h2{
+        font-size: 20px;
+        margin-left: 0;
+    }
+    .nav-responsive{
+        width: 65%;
+    }
+}
+@media screen and (max-width:700px){
+    /* Navbar responsive */
+    .navbar .header-logo img{
+        width: 130px;
+    }
+    .navbar .title{
+        top: 40px;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 20px;
+    }
+    .navbar{height: 65px;}
+    .navbar .responsive-icons img{
+        bottom: 10px;
+    }
+    /* Navbar responsive */
+    .nav-responsive{
+        width: 70%;
+        margin-right: 0;
+    }
+    .nav-responsive a{
+        font-size: 0.8em;
+    }
+    .btq_nav h2{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width:650px){
+    .card{
+        width: 180px;
+    }
+    .card img{
+        height: 180px;
+    }
+    .card .title,.card .price{
+        font-size: 15px;
+    }
+    .card .description{
+        font-size: 12px;
+    }
+    .wrapper{
+        grid-template-columns: repeat(auto-fit,minmax(100px,180px));
+    }
+   
+    .footer-logo{
+        margin-right: 40px;
+    }
+}
+@media screen and (max-width:600px){
+    /* Navbar responsive */
+    .navbar{
+        height: 54px;
+    }
+    .navbar .responsive-icons img{
+        width: 30px;
+        bottom: 12px;
+    }
+    .navbar .title{top: 35px;}
+    .navbar .title,.navbar .moune,.navbar .shop{font-size: 18px;}
+    .navbar .header-logo img{
+        width: 110px;
+        margin-left: 10px;
+    }
+    /* Navbar responsive */
+    .nav-responsive{
+        display: none;
+    }
+    .btq_nav{
+        width: 100%;
+        overflow: hidden;
+    }
+    .btq_nav h2{
+        font-size: 1.3em;
+    }
+    .btq_nav img{
+        display: block;
+        width: 30px;
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+    .btq_nav .box .categories-box{
+        display: none;
+    }
+    .btq_nav .categories-box{
+        display: none;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: absolute;
+        right: 40px;
+        top: 110px;
+        width: 150px;
+        height: 300px;
+        background-color: #fff;
+        box-shadow: 0 0 4px rgba(128, 128, 128, 0.1);
+        z-index: 100;
+    }
+    .btq_nav .categories-box.active{
+        display: flex;
+    }
+    .btq_nav .categories-box a{
+        color: black;
+        font-weight: bolder;
+        font-size: 1.2em;
+        font-family: Arial;
+    }
+    .btq_nav .categories-box hr{
+        width: 100%;
+        background-color: black;
+    }
+    .btq_nav .categories-box #title{
+        font-size: 1.5em;
+        font-family: "Bauhaus 93";
+        font-weight: bolder;
+        text-transform: uppercase;
+        margin-top: 10px;
+    }
+    
+}
+
+@media screen and (max-width:540px){
+    .footer-logo{
+        margin-right: 70px;
+    }
+}
+
+@media screen and (max-width:395px){
+    /* Navbar responsive */
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 16px;
+    }
+    .navbar{
+        height: 52px;
+    }
+    .navbar .header-logo img{
+        width: 100px;
+        margin-left: 15px;
+    }
+    .navbar .responsive-icons img{
+        width: 28px;
+        bottom: 15px;
+    }
+    /* Navbar responsive */
+}
+@media screen and (max-width:375px) {
+    .card{
+        width: 160px;
+    }
+    .card img{
+        height: 160px;
+    }
+    .card .title,.card .price{
+        font-size: 14px;
+    }
+    .card .description{
+        font-size: 10px;
+    }
+    .wrapper{
+        grid-template-columns: repeat(auto-fit,minmax(100px,160px));
+    }
+}
+@media screen and (max-width:390px){
+    .footer-container .items{
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+}
+@media screen and (max-width:350px){
+    /*Navbar responsive*/
+    .navbar .header-logo img{
+        width: 90px;
+    }
+    .navbar{
+        height: 44px;
+    }
+    .navbar .title{
+        top: 30px;
+        right: 23%;
+    }
+    .navbar .title,.navbar .moune,.navbar .shop{
+        font-size: 12px;
+    }
+    .navbar .responsive-icons img{
+        display: none;
+    }
+    .navbar .responsive-icons #menu{
+        display: block;
+    }
+    /*Navbar responsive*/
+}
+}

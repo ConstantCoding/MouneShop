@@ -1,0 +1,113 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panier</title>
+    <link rel="stylesheet" href="{%static 'Store/CSS/index.css'%}">
+    <link rel="stylesheet" href="{%static 'Store/CSS/panier.css'%}">
+</head>
+<body>
+
+    {%if messages%}
+        <div class="messages">
+            {% for message in messages %}
+                <p class="alert alert-{{message.tags}}">{{ message }} !</p>
+            {%endfor%}
+        </div>
+    {%endif%}
+
+    <!--Entete et navbar-->
+    <header>
+        <div class="header-container">
+            <div class="title"><p>M<span class="moune">oune</span>S<span class="shop">hop</span></p></div>
+            <div class="actions">
+                <a href="{% url 'contact'%}">Nous contacter |</a>
+                <a href="{% url 'register_store'%}">Rejoignez-nous |</a>
+                <a href="{% url 'login_store'%}">Se Connecter</a>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="header-logo">
+            <a href="{% url 'index' %}"><img width="180" src="{% static 'Store/icons/logo.png'%}" loading="lazy" alt="LOGO"></a>
+        </div>
+        <div class="title"><p>M<span class="moune">oune</span>S<span class="shop">hop</span></p></div>
+        
+        <ul class="items">
+            <li><a href="{% url 'nouveautes' %}">Nouveautés</a></li>
+            <li><a href="{% url 'hommes' %}">Hommes</a></li>
+            <li><a href="{% url 'femmes' %}">Femmes</a></li>
+            <li><a href="{% url 'enfants'%}">Enfants</a></li>
+        </ul>
+
+        <div class="nav-end">
+            <form class="search"> 
+                <input type="search" placeholder="Recherche">
+                <button type="submit"><img loading="lazy" width="30" src="{% static 'Store/icons/search.png'%}" alt=""></button>
+            </form>
+            <div class="end-icon">
+                <a id="compte" href="{%url 'detail_utilisateur'%}"><img width="30" src="{% static 'Store/icons/person.png'%}" loading="lazy" alt=""></a>
+                <a id="sac" href="{%url 'voir_panier'%}">
+                    <img width="30" src="{% static 'Store/icons/shopping_bag.png'%}" loading="lazy" alt="">
+                    <div class="box">
+                        <p>{{user.username}} connecté(e)</p>
+                        <p>cliquer pour voir les details</p>
+                    </div>
+                </a>          
+            </div>
+            
+        </div>
+        <div class="responsive-icons">
+            <a id="search" href=""><img src="{% static 'Store/icons/search.png'%}" loading="lazy" alt=""></a>
+            <a href=""><img src="{% static 'Store/icons/person.png'%}" loading="lazy" alt=""></a>
+            <a href="{%url 'voir_panier'%}"><img src="{% static 'Store/icons/shopping_bag.png'%}" loading="lazy" alt=""></a>
+            <a href=""><img id="menu" src="{% static 'Store/icons/Menu.png'%}" loading="lazy" alt=""></a>
+        </div>
+        <div class="banner">
+            <div class="ban-head"><img id="croix" src="{% static 'Store/icons/croix.png'%}" loading="lazy" alt="fermer"></div>
+            <a href="{% url 'index'%}">Accueil</a>
+            <a href="{% url 'nouveautes'%}">Nouveautés</a>
+            <a href="{% url 'boutique' %}">Boutique</a>
+            <a href="{% url 'hommes' %}">Hommes</a>
+            <a href="{% url 'femmes'%}">Femmes</a>
+            <a href="{% url 'enfants' %}">Enfants</a>
+            <a href="{% url 'contact'%}">Nous contacter</a>
+            <a href="{% url 'register_store'%}">Rejoignez-nous</a>
+            <a href="{% url 'login_store'%}">Se Connecter</a>
+        </div>
+    </nav>
+    <!--Entete et navbar-->
+
+    {%if panier%}
+        <ul class="panier-container">
+            {%for id_produit, item in panier.items%}
+                <li class="panier-card">
+                    <img src="{{item.image}}" alt="">
+                    <strong>{{item.nom}}</strong><br>
+                    <p>Prix : {{item.prix}}</p>
+                    <p>Quantité : {{item.quantite}}</p>
+                    <form action="{% url 'supprimer_du_panier' id_produit %}" method="post">
+                        {%csrf_token%}
+                        <button type="submit">Supprimer ce produit</button>
+                    </form>
+                </li>
+            {%endfor%}
+        </ul>
+        <h3>Total : {{total}}</h3>
+        <a href="{% url 'vider_panier' %}"><button>Vider le panier</button></a>
+        <form action="{% url 'passer_commande'%}" method="post">
+            {%csrf_token%}
+            <button type="submit">Commander</button>
+        </form>
+        
+    
+    {%else%}
+        <p class="panier-vide">votre panier est vide</p>
+    {%endif%}
+    
+
+    <script src="{%static 'Store/JS/messages.js'%}"></script>
+</body>
+</html>

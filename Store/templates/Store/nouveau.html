@@ -1,0 +1,270 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nouveautés</title>
+    <link rel="stylesheet" href="{% static 'Store/CSS/boutique.css'%}">
+    <style>
+        .nav-end .search button{
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <!--Entete et navbar-->
+    <header>
+        {%block content%}
+        <div class="header-container">
+            <div class="title">
+                <p>M<span class="moune">oune</span>S<span class="shop">hop</span></p>
+            </div>
+            <div class="actions">
+                <a href="{% url 'contact'%}">Nous contacter |</a>
+                <a href="{% url 'register_store'%}">Rejoignez-nous |</a>
+                <a href="{% url 'login_store'%}">Se Connecter</a>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="header-logo">
+            <a href="{% url 'index' %}"><img width="180" src="{% static 'Store/icons/logo.png'%}" alt="LOGO"></a>
+        </div>
+        <div class="title">
+            <p>M<span class="moune">oune</span>S<span class="shop">hop</span></p>
+        </div>
+
+        <ul class="items">
+            <li><a href="{% url 'nouveautes' %}">Nouveautés</a></li>
+            <li><a href="{% url 'hommes' %}">Hommes</a></li>
+            <li><a href="{% url 'femmes' %}">Femmes</a></li>
+            <li><a href="{% url 'enfants'%}">Enfants</a></li>
+        </ul>
+
+        <div class="nav-end">
+            <form class="search"> 
+                <input type="search" placeholder="Recherche">
+                <button type="submit"><img loading="lazy" width="30" src="{% static 'Store/icons/search.png'%}" alt=""></button>
+            </form>
+            <div class="end-icon">
+                <a id="compte" href="{%url 'detail_utilisateur'%}"><img width="30" src="{% static 'Store/icons/person.png'%}" loading="lazy" alt=""></a>
+                <a id="sac" href="{%url 'voir_panier'%}">
+                    <img width="30" src="{% static 'Store/icons/shopping_bag.png'%}" loading="lazy" alt="">
+                    <div class="box">
+                    {%if panier%}
+                        <div class="red-disc"></div>
+                    {%endif%}
+                    <p>{{user.username}} connecté(e)</p>
+                    <p>cliquer pour voir les details</p>
+                    </div>
+                </a>          
+            </div>
+
+        </div>
+        <div class="responsive-icons">
+            <a id="search" href=""><img src="{% static 'Store/icons/search.png'%}" alt=""></a>
+            <a href="login.html"><img src="{% static 'Store/icons/person.png'%}" alt=""></a>
+            <a href="">
+                <img src="{% static 'Store/icons/shopping_bag.png'%}" alt="">
+                {%if panier%}
+                    <div class="red-disc"></div>
+                {%endif%}
+            </a>
+            <a href=""><img id="menu" src="{% static 'Store/icons/Menu.png'%}" alt=""></a>
+        </div>
+        <div class="banner">
+            <div class="ban-head"><img id="croix" src="{% static 'Store/icons/croix.png'%}" alt=""></div>
+            <a href="{% url 'index'%}">Accueil</a>
+            <a href="{% url 'nouveautes'%}">Nouveautés</a>
+            <a href="{% url 'boutique' %}">Boutique</a>
+            <a href="{% url 'hommes' %}">Hommes</a>
+            <a href="{% url 'femmes'%}">Femmes</a>
+            <a href="{% url 'enfants' %}">Enfants</a>
+            <a href="{% url 'contact'%}">Nous contacter</a>
+            <a href="{% url 'register_store'%}">Rejoignez-nous</a>
+            <a href="{% url 'login_store'%}">Se Connecter</a>
+        </div>
+        {%endblock%}
+    </nav>
+    <!--Entete et navbar-->
+
+    <!-- Sidebar et contenu-->
+     <div class="btq_nav">
+        <h2>Nouveautés</h2>
+        <ul class="nav-responsive">
+            
+            {%for categorie in categories%}
+                <li><a href="">{{categorie.nom_categorie}}</a></li>
+            {%endfor%}
+        </ul>
+        <div class="box">
+            <img id="menu-trait" src="{% static 'Store/icons/menu-trait.png'%}" alt="">
+            <ul class="categories-box">
+                {%for categorie in categories%}
+                    <li><a href="">{{categorie.nom_categorie}}</a></li>
+                {%endfor%}
+            </ul>
+        </div>
+     </div>
+     <div class="sidebar">
+        <h2>Categories</h2>
+        <ul class="nav">
+            {%for categorie in categories%}
+                <li><a href="">{{categorie.nom_categorie}}</a></li>
+            {%endfor%}
+        </ul>
+     </div>
+     <div class="main">
+        <div class="wrapper">
+            <div class="card">
+                <a href="">
+                    <img src="img/imgs/bsk15.jpg" alt="">
+                    <h2 class="new">Tout juste arrivée</h2>
+                    <h2 class="title">Nike Air Jordan</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quos, accusantium iure natus nisi at eligendi itaque</p>
+                    <p class="price">285 $</p>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="">
+                    <img src="img/imgs/bsk16.jpg" alt="">
+                    <h2 class="new">Tout juste arrivée</h2>
+                    <h2 class="title">Nike Air Jordan</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quos, accusantium iure natus nisi at eligendi itaque</p>
+                    <p class="price">190 $</p>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="">
+                    <img src="img/imgs/bsk17.jpg" alt="">
+                    <h2 class="new">Tout juste arrivée</h2>
+                    <h2 class="title">Nike Air Jordan</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quos, accusantium iure natus nisi at eligendi itaque</p>
+                    <p class="price">170 $</p>
+                </a>
+            </div>
+
+            <div id="sport" class="card">
+                <a href="">
+                    <img src="img/imgs/bsk18.jpg" alt="">
+                    <h2 class="new">Tout juste arrivée</h2>
+                    <h2 class="title">Nike Air Jordan</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quos, accusantium iure natus nisi at eligendi itaque</p>
+                    <p class="price">180 $</p>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="">
+                    <img src="img/imgs/bsk13.jpg" alt="">
+                    <h2 class="new">Tout juste arrivée</h2>
+                    <h2 class="title">Nike Air Jordan</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quos, accusantium iure natus nisi at eligendi itaque</p>
+                    <p class="price">110 $</p>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="">
+                    <img src="img/imgs/bsk14.jpg" alt="">
+                    <h2 class="new">Tout juste arrivée</h2>
+                    <h2 class="title">Nike Air Jordan</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quos, accusantium iure natus nisi at eligendi itaque</p>
+                    <p class="price">140 $</p>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="">
+                    <img src="img/imgs/bsk1.jpg" alt="">
+                    <h2 class="new">Tout juste arrivée</h2>
+                    <h2 class="title">Nike Air Jordan</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quos, accusantium iure natus nisi at eligendi itaque</p>
+                    <p class="price">170 $</p>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="">
+                    <img src="img/imgs/bsk2.jpg" alt="">
+                    <h2 class="new">Tout juste arrivée</h2>
+                    <h2 class="title">Nike Air Jordan</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quos, accusantium iure natus nisi at eligendi itaque</p>
+                    <p class="price">100 $</p>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="">
+                    <img src="img/imgs/bsk3.jpg" alt="">
+                    <h2 class="new">Tout juste arrivée</h2>
+                    <h2 class="title">Nike Air Jordan</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quos, accusantium iure natus nisi at eligendi itaque</p>
+                    <p class="price">160 $</p>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="">
+                    <img src="img/imgs/bsk4.jpg" alt="">
+                    <h2 class="new">Tout juste arrivée</h2>
+                    <h2 class="title">Nike Air Jordan</h2>
+                    <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio quos, accusantium iure natus nisi at eligendi itaque</p>
+                    <p class="price">130 $</p>
+                </a>
+            </div>
+        </div>
+        <footer>
+            <div class="footer-logo"><img src="{% static 'Store/icons/logo.png'%}" alt=""></div>
+            <div class="footer-container">
+                <ul class="items">
+                    <li><a href="">Trouver notre magasin</a></li>
+                    <li><a href="{%url 'contact'%}">Aide</a></li>
+                    <li><a href="{%url 'register_store'%}">Rejoignez-nous</a></li>
+                    <li><a href="{%url 'login_store'%}">Se connecter</a></li>
+                </ul>
+            </div>
+            <p>©️ copyright MouneShop 2025. All right reserved.</p>
+        </footer>
+     </div>
+
+     <script>
+        let btq_nav = document.querySelector(".btq_nav")
+        let header_container = document.querySelector(".header-container")
+        let navbar = document.querySelector(".navbar")
+        let sidebar = document.querySelector(".sidebar")
+
+        let menu_trait = document.getElementById("menu-trait")
+        let categories_box = document.querySelector(".categories-box")
+
+        let lastScrollTop = 0
+
+        window.addEventListener("scroll", ()=>{
+            let scrollTop = window.scrollY || document.documentElement.scrollTop
+            if(scrollTop > lastScrollTop){
+                header_container.style.display = "none"
+                navbar.style.display = "none"
+                btq_nav.style.position="sticky"
+                btq_nav.style.top = "0"
+                btq_nav.style.width="100%"
+                sidebar.style.top = "20px"
+            }else{
+                header_container.style.display = "flex"
+                navbar.style.display = "flex"
+                sidebar.style.top = "193px"
+            }
+            lastScrollTop = scrollTop
+        })
+        menu_trait.addEventListener("click",function(event){
+            event.preventDefault()
+            categories_box.style.display = "flex"
+        })
+     </script>
+     <script src="{%static 'Store/JS/style-responsive.js'%}"></script>
+</body>
+</html>

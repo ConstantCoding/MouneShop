@@ -1,0 +1,129 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter</title>
+    <link rel="stylesheet" href="{% static 'Store/CSS/log.css'%}">
+</head>
+<body>
+    <!--Entete et navbar-->
+    <header>
+        <div class="header-container">
+            <div class="title"><p>M<span class="moune">oune</span>S<span class="shop">hop</span></p></div>
+            <div class="actions">
+                <a href="{% url 'contact'%}">Nous contacter |</a>
+                <a href="{% url 'register_store'%}">Rejoignez-nous |</a>
+                <a href="{% url 'login_store'%}">Se Connecter</a>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="header-logo">
+            <a href="{% url 'index' %}"><img width="180" src="{% static 'Store/icons/logo.png'%}" alt="LOGO"></a>
+        </div>
+        <div class="title"><p>M<span class="moune">oune</span>S<span class="shop">hop</span></p></div>
+        
+        <ul class="items">
+            <li><a href="{% url 'nouveautes' %}">Nouveautés</a></li>
+            <li><a href="{% url 'hommes' %}">Hommes</a></li>
+            <li><a href="{% url 'femmes' %}">Femmes</a></li>
+            <li><a href="{% url 'enfants'%}">Enfants</a></li>
+        </ul>
+
+        <div class="nav-end">
+            <div class="search">
+                <a href=""><img width="30" src="{% static 'Store/icons/search.png'%}" alt=""></a>
+                <input type="search" placeholder="Recherche">
+            </div>
+            <div class="end-icon">
+                <a id="compte" href="{%url 'detail_utilisateur'%}"><img width="30" src="{% static 'Store/icons/person.png'%}" loading="lazy" alt=""></a>
+                <a id="sac" href="{%url 'voir_panier'%}">
+                    {%if panier%}
+                        <div class="red-disc"></div>
+                    {%endif%}
+                    <img width="30" src="{% static 'Store/icons/shopping_bag.png'%}" loading="lazy" alt="">
+                    <div class="box">
+                        <p>{{user.username}} connecté(e)</p>
+                        <p>cliquer pour voir les details</p>
+                    </div>
+                </a>          
+            </div>
+            
+        </div>
+        <div class="responsive-icons">
+            <a id="search" href=""><img src="{% static 'Store/icons/search.png'%}" alt=""></a>
+            <a href="login.html"><img src="{% static 'Store/icons/person.png'%}" alt=""></a>
+            <a href="">
+                <img src="{% static 'Store/icons/shopping_bag.png'%}" alt="">
+                {%if panier%}
+                    <div class="red-disc"></div>
+                {%endif%}
+            </a>
+            <a href=""><img id="menu" src="{% static 'Store/icons/Menu.png'%}" alt=""></a>
+        </div>
+        <div class="banner">
+            <div class="ban-head"><img id="croix" src="{% static 'Store/icons/croix.png'%}" alt=""></div>
+            <a href="{% url 'index'%}">Accueil</a>
+            <a href="{% url 'nouveautes'%}">Nouveautés</a>
+            <a href="{% url 'boutique' %}">Boutique</a>
+            <a href="{% url 'hommes' %}">Hommes</a>
+            <a href="{% url 'femmes'%}">Femmes</a>
+            <a href="{% url 'enfants' %}">Enfants</a>
+            <a href="{% url 'contact'%}">Nous contacter</a>
+            <a href="{% url 'register_store'%}">Rejoignez-nous</a>
+            <a href="{% url 'login_store'%}">Se Connecter</a>
+        </div>
+    </nav>
+    <!--Entete et navbar-->
+    <!--Formulaire de connexion-->
+    <div class="main">
+        <div class="wrapper">
+            <form method="post" action="{% url 'login_store'%}">
+                {% csrf_token %}
+                <div class="register-container" id="register">
+                    <div class="top">
+                        <span>Pas de compte ? <a href="{%url 'register_store'%}" class="login-link">S'inscrire</a></span>
+                        <p class="title">Connexion</p>
+                    </div>
+                    {%if messages%}
+                        <div class="msg-container">
+                            {%for message in messages%}
+                                <p class="message {{message.tags}}">{{message}}</p>
+                            {%endfor%}
+                        </div>
+                    {%endif%}
+                    <div class="input-box">
+                        <input type="text" class="input-field margin" placeholder="Email" name="email">
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" class="input-field margin" placeholder="Mot de passe" name="password">
+                    </div>
+
+                    <div class="input-box">
+                        <input type="submit" class="submit" value="Se connecter">
+                    </div>
+                    <div class="two-col">
+                        <div class="one">
+                            <input type="checkbox" id="register-check">
+                            <label for="register-check">Se souvenir de moi</label>
+                        </div>
+                        <div class="two">
+                            <label><a href="">Termes et conditions</a></label>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!--Formulaire de connexion-->
+    
+    <script src="{% static 'Store/JS/style-responsive.js'%}"></script>
+    <script>
+        let main_section = document.querySelector(".main")
+        main_section.style.background = "url({{background.item_image.url}})"
+    </script>
+</body>
+</html>

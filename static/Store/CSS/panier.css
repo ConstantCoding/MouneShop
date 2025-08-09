@@ -1,0 +1,31 @@
+.nav-end .search button{
+    border: none;
+    outline: none;
+}
+
+.panier-container{
+    margin-top: 140px;
+}
+
+.panier-vide{
+    text-align: center;
+    margin-top: 180px;
+}
+
+
+.messages .alert-success, .messages .alert-error, .messages .alert-warning{
+    color: green;
+    position: relative;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 26px;
+    top: 300px;
+    padding: 10px;
+    z-index: 1000;
+}
+.messages .alert-error{
+    color: red;
+}
+.messages .alert-warning{
+    color: #ff9800;
+}

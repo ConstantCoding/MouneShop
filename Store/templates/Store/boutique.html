@@ -1,0 +1,254 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique MouneShop</title>
+    <link rel="stylesheet" href="{%static 'Store/CSS/boutique.css'%}">
+    <style>
+        .nav-end .search button {
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    {%if messages%}
+        {%for message in messages%}
+            <p class="alert alert-{{message.tags}}">
+                {{message}}
+            </p>
+        {%endfor%}
+    {%endif%}
+    <!--Entete et navbar-->
+    <header>
+        <div class="header-container">
+            <div class="title">
+                <p>M<span class="moune">oune</span>S<span class="shop">hop</span></p>
+            </div>
+            <div class="actions">
+                <a href="{% url 'contact'%}">Nous contacter |</a>
+                <a href="{% url 'register_store'%}">Rejoignez-nous |</a>
+                <a href="{% url 'login_store'%}">Se Connecter</a>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="header-logo">
+            <a href="{% url 'index' %}"><img width="180" src="{% static 'Store/icons/logo.png'%}" alt="LOGO"></a>
+        </div>
+        <div class="title">
+            <p>M<span class="moune">oune</span>S<span class="shop">hop</span></p>
+        </div>
+
+        <ul class="items">
+            <li><a href="{% url 'nouveautes' %}">Nouveautés</a></li>
+            <li><a href="{% url 'hommes' %}">Hommes</a></li>
+            <li><a href="{% url 'femmes' %}">Femmes</a></li>
+            <li><a href="{% url 'enfants'%}">Enfants</a></li>
+        </ul>
+
+        <div class="nav-end">
+            <form class="search">
+                <input type="search" placeholder="Recherche">
+                <button type="submit"><img loading="lazy" width="30" src="{% static 'Store/icons/search.png'%}"
+                        alt=""></button>
+            </form>
+            <div class="end-icon">
+                <a id="compte" href="{%url 'detail_utilisateur'%}">
+                    <img width="30" src="{% static 'Store/icons/person.png'%}" loading="lazy" alt="">
+                    {%if panier%}
+                    <div class="red-disc"></div>
+                    {%endif%}
+                </a>
+                <a id="sac" href="{%url 'voir_panier'%}">
+                    <img width="30" src="{% static 'Store/icons/shopping_bag.png'%}" loading="lazy" alt="">
+                    <div class="box">
+                        <p>{{user.username}} connecté(e)</p>
+                        <p>cliquer pour voir les details</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+        <div class="responsive-icons">
+            <a id="search" href=""><img src="{% static 'Store/icons/search.png'%}" alt=""></a>
+            <a href="login.html"><img src="{% static 'Store/icons/person.png'%}" alt=""></a>
+            <a href="">
+                <img src="{% static 'Store/icons/shopping_bag.png'%}" alt="">
+                {%if panier%}
+                <div class="red-disc"></div>
+                {%endif%}
+            </a>
+            <a href=""><img id="menu" src="{% static 'Store/icons/Menu.png'%}" alt=""></a>
+        </div>
+        <div class="banner">
+            <div class="ban-head"><img id="croix" src="{% static 'Store/icons/croix.png'%}" alt=""></div>
+            <a href="{% url 'index'%}">Accueil</a>
+            <a href="{% url 'nouveautes'%}">Nouveautés</a>
+            <a href="{% url 'boutique' %}">Boutique</a>
+            <a href="{% url 'hommes' %}">Hommes</a>
+            <a href="{% url 'femmes'%}">Femmes</a>
+            <a href="{% url 'enfants' %}">Enfants</a>
+            <a href="{% url 'contact'%}">Nous contacter</a>
+            <a href="{% url 'register_store'%}">Rejoignez-nous</a>
+            <a href="{% url 'login_store'%}">Se Connecter</a>
+        </div>
+    </nav>
+    <!--Entete et navbar-->
+
+    <!-- Sidebar et contenu-->
+    <div class="btq_nav">
+        <h2>Boutique MouneShop</h2>
+        <ul class="nav-responsive">
+
+            {%for categorie in categories%}
+            <li><a href="#{{categorie.nom_categorie}}">{{categorie.nom_categorie}}</a></li>
+            {%endfor%}
+        </ul>
+        <div class="box">
+            <img id="menu-trait" src="{% static 'Store/icons/menu-trait.png' %}" alt="">
+            <ul class="categories-box">
+                {%for categorie in categories%}
+                <li><a href="#{{categorie.nom_categorie}}">{{categorie.nom_categorie}}</a></li>
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h2>Categories</h2>
+        <ul class="nav">
+            {%for categorie in categories%}
+            <li><a href="#{{categorie.nom_categorie|lower}}">{{categorie.nom_categorie}}</a></li>
+            {%endfor%}
+        </ul>
+    </div>
+    <div class="main">
+        <div class="wrapper" id="wrapper">
+            {% for produit in produits %}
+            <div id="{{ produit.categorie }}" class="card">
+                <a href="{% url 'detail_produit' produit.id_produit %}">
+                    {% if produit.images.first %}
+                    <img loading="lazy" src="{{ produit.images.first.image_produit.url }}" alt="">
+                    {% else %}
+                    <p style="text-align: center;color: black;font-size: 23px;">pas d'images</p>
+                    {% endif %}
+                    <h2 class="title">{{ produit.nom_produit }}</h2>
+                    <p class="description">{{ produit.description_produit }}</p>
+                    <p class="price">{{ produit.prix_produit }}$</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div style="text-align: center; margin-top: 20px;">
+            <button id="loadMoreBtn">Afficher plus</button>
+            <p id="loading" style="display: none;">Chargement...</p>
+        </div>
+
+        <footer>
+            <div class="footer-logo"><img src="{% static 'Store/icons/logo.png'%}" alt=""></div>
+            <div class="footer-container">
+                <ul class="items">
+                    <li><a href="">Trouver notre magasin</a></li>
+                    <li><a href="{%url 'contact'%}">Aide</a></li>
+                    <li><a href="{%url 'register_store'%}">Rejoignez-nous</a></li>
+                    <li><a href="{%url 'login_store'%}">Se connecter</a></li>
+                </ul>
+            </div>
+            <p>©️ copyright MouneShop 2025. All right reserved.</p>
+        </footer>
+    </div>
+    <!-- Sidebar et contenu-->
+    <script>
+        let btq_nav = document.querySelector(".btq_nav")
+        let header_container = document.querySelector(".header-container")
+        let navbar = document.querySelector(".navbar")
+        let sidebar = document.querySelector(".sidebar")
+
+        let menu_trait = document.getElementById("menu-trait")
+        let categories_box = document.querySelector(".categories-box")
+
+        let lastScrollTop = 0
+
+        window.addEventListener("scroll", () => {
+            let scrollTop = window.scrollY || document.documentElement.scrollTop
+            if (scrollTop > lastScrollTop) {
+                header_container.style.display = "none"
+                navbar.style.display = "none"
+                btq_nav.style.position = "sticky"
+                btq_nav.style.top = "0"
+                btq_nav.style.width = "100%"
+                sidebar.style.top = "20px"
+            } else {
+                header_container.style.display = "flex"
+                navbar.style.display = "flex"
+                sidebar.style.top = "193px"
+            }
+            lastScrollTop = scrollTop
+        })
+        menu_trait.addEventListener("click", function (event) {
+            event.preventDefault()
+            categories_box.classList.toggle("active")
+        })
+    </script>
+    <script src="{% static 'Store/JS/style-responsive.js' %}"></script>
+    <script>
+        let offset = 6;  // 6 premiers produits déjà chargés
+        const limit = 6;
+        const loadMoreBtn = document.getElementById("loadMoreBtn");
+        const wrapper = document.getElementById("wrapper");
+        const loadingText = document.getElementById("loading");
+
+        loadMoreBtn.addEventListener("click", () => {
+            loadingText.style.display = "block";
+            fetch(`?offset=${offset}&limit=${limit}`, {
+                headers: {
+                    "X-Requested-With": "XMLHttpRequest"
+                }
+            })
+                .then(response => response.json())
+                .then(data => {
+                    loadingText.style.display = "none";
+                    const produits = data.produits;
+
+                    if (produits.length === 0) {
+                        loadMoreBtn.style.display = "none";
+                        return;
+                    }
+
+                    produits.forEach(produit => {
+                        const card = document.createElement("div");
+                        card.classList.add("card");
+                        card.id = produit.categorie;
+
+                        const imageHTML = produit.image
+                            ? `<img loading="lazy" src="${produit.image}" alt="">`
+                            : `<p style="text-align: center;color: black;font-size: 23px;">pas d'images</p>`;
+
+                        card.innerHTML = `
+                    <a href="/details/${produit.id}">
+                        ${imageHTML}
+                        <h2 class="title">${produit.nom}</h2>
+                        <p class="description">${produit.description}</p>
+                        <p class="price">${produit.prix}$</p>
+                    </a>
+                `;
+                        wrapper.appendChild(card);
+                    });
+
+                    offset += limit;
+                })
+                .catch(error => {
+                    loadingText.style.display = "none";
+                    console.error("Erreur lors du chargement :", error);
+                });
+        });
+    </script>
+</body>
+
+</html>

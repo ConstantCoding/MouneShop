@@ -1,0 +1,110 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détail </title>
+    <link rel="stylesheet" href="{%static 'Store/CSS/index.css'%}">
+    <link rel="stylesheet" href="{%static 'Store/CSS/detail.css'%}">
+    <style>
+        .responsive-icons .red-disc {
+            width: 12px;
+            height: 12px;
+            position: relative;
+            bottom: 46px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!--Entete et navbar-->
+    <header>
+        <div class="header-container">
+            <div class="title"><p>M<span class="moune">oune</span>S<span class="shop">hop</span></p></div>
+            <div class="actions">
+                <a href="{% url 'contact'%}">Nous contacter |</a>
+                <a href="{% url 'register_store'%}">Rejoignez-nous |</a>
+                <a href="{% url 'login_store'%}">Se Connecter</a>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="header-logo">
+            <a href="{% url 'index' %}"><img width="180" src="{% static 'Store/icons/logo.png'%}" loading="lazy" alt="LOGO"></a>
+        </div>
+        <div class="title"><p>M<span class="moune">oune</span>S<span class="shop">hop</span></p></div>
+        
+        <ul class="items">
+            <li><a href="{% url 'nouveautes' %}">Nouveautés</a></li>
+            <li><a href="{% url 'hommes' %}">Hommes</a></li>
+            <li><a href="{% url 'femmes' %}">Femmes</a></li>
+            <li><a href="{% url 'enfants'%}">Enfants</a></li>
+        </ul>
+
+        <div class="nav-end">
+            <form class="search"> 
+                <input type="search" placeholder="Recherche">
+                <button type="submit"><img loading="lazy" width="30" src="{% static 'Store/icons/search.png'%}" alt=""></button>
+            </form>
+            <div class="end-icon">
+                <a id="compte" href="{%url 'detail_utilisateur'%}"><img width="30" src="{% static 'Store/icons/person.png'%}" loading="lazy" alt=""></a>
+                <a id="sac" href="{%url 'voir_panier'%}">
+                    <img width="30" src="{% static 'Store/icons/shopping_bag.png'%}" loading="lazy" alt="">
+                    {%if panier%}
+                        <div class="red-disc"></div>
+                    {%endif%}
+                    <div class="box">
+                        <p>{{user.username}} connecté(e)</p>
+                        <p>cliquer pour voir les details</p>
+                    </div>
+                </a>          
+            </div>
+            
+        </div>
+        <div class="responsive-icons">
+            <a id="search" href=""><img src="{% static 'Store/icons/search.png'%}" loading="lazy" alt=""></a>
+            <a href=""><img src="{% static 'Store/icons/person.png'%}" loading="lazy" alt=""></a>
+            <a href="{%url 'voir_panier'%}">
+                <img src="{% static 'Store/icons/shopping_bag.png'%}" loading="lazy" alt="">
+                {%if panier%}
+                    <div class="red-disc"></div>
+                {%endif%}
+            </a>
+            <a href=""><img id="menu" src="{% static 'Store/icons/Menu.png'%}" loading="lazy" alt=""></a>
+        </div>
+        <div class="banner">
+            <div class="ban-head"><img id="croix" src="{% static 'Store/icons/croix.png'%}" loading="lazy" alt="fermer"></div>
+            <a href="{% url 'index'%}">Accueil</a>
+            <a href="{% url 'nouveautes'%}">Nouveautés</a>
+            <a href="{% url 'boutique' %}">Boutique</a>
+            <a href="{% url 'hommes' %}">Hommes</a>
+            <a href="{% url 'femmes'%}">Femmes</a>
+            <a href="{% url 'enfants' %}">Enfants</a>
+            <a href="{% url 'contact'%}">Nous contacter</a>
+            <a href="{% url 'register_store'%}">Rejoignez-nous</a>
+            <a href="{% url 'login_store'%}">Se Connecter</a>
+        </div>
+    </nav>
+    <!--Entete et navbar-->
+
+    <section class="detail-carrousel">
+        {%for img in images%}
+            <img loading="lazy" src="{{img.image_produit.url}}" alt="image du produit">
+        {%endfor%}
+    </section>
+    <section class="detail-description">
+        <h1>{{produit.nom_produit}}</h1>
+        <p>{{produit.prix_produit}}</p>
+        <p>{{produit.description_produit}}</p>
+        <p>Stock disponible : {{produit.quantite_produit}}</p>
+        <form action="{% url 'ajouter_panier' produit.id_produit%}" method="post">
+            {%csrf_token%}
+            <label for="quantite">Quantité</label>
+            <input type="number" name = "quantite" min="1" value="1">
+            <button type="submit">Ajouter au panier</button>
+        </form>
+    </section>   
+</body>
+</html>

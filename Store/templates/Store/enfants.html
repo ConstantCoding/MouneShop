@@ -1,0 +1,220 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enfants</title>
+    <link rel="stylesheet" href="{% static 'Store/CSS/enfants.css'%}">
+    <style>
+        .nav-end .search button{
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!--Entete et navbar-->
+    <header>
+        <div class="header-container">
+            <div class="title">
+                <p>M<span class="moune">oune</span>S<span class="shop">hop</span></p>
+            </div>
+            <div class="actions">
+                <a href="{% url 'contact'%}">Nous contacter |</a>
+                <a href="{% url 'register_store'%}">Rejoignez-nous |</a>
+                <a href="{% url 'login_store'%}">Se Connecter</a>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar">
+        <div class="header-logo">
+            <a href="{% url 'index' %}"><img loading="lazy" width="180" src="{% static 'Store/icons/logo.png'%}"
+                    alt="LOGO"></a>
+        </div>
+        <div class="title">
+            <p>M<span class="moune">oune</span>S<span class="shop">hop</span></p>
+        </div>
+
+        <ul class="items">
+            <li><a href="{% url 'nouveautes' %}">Nouveautés</a></li>
+            <li><a href="{% url 'hommes' %}">Hommes</a></li>
+            <li><a href="{% url 'femmes' %}">Femmes</a></li>
+            <li><a href="{% url 'enfants'%}">Enfants</a></li>
+        </ul>
+
+        <div class="nav-end">
+            <form class="search"> 
+                <input type="search" placeholder="Recherche">
+                <button type="submit"><img loading="lazy" width="30" src="{% static 'Store/icons/search.png'%}" alt=""></button>
+            </form>
+            <div class="end-icon">
+                <a id="compte" href="{%url 'detail_utilisateur'%}"><img width="30" src="{% static 'Store/icons/person.png'%}" loading="lazy" alt=""></a>
+                <a id="sac" href="{%url 'voir_panier'%}">
+                    <img width="30" src="{% static 'Store/icons/shopping_bag.png'%}" loading="lazy" alt="">
+                    {%if panier%}
+                        <div class="red-disc"></div>
+                    {%endif%}
+                    <div class="box">
+                        <p>{{user.username}} connecté(e)</p>
+                        <p>cliquer pour voir les details</p>
+                    </div>
+                </a>          
+            </div>
+
+        </div>
+        <div class="responsive-icons">
+            <a id="search" href=""><img loading="lazy" src="{% static 'Store/icons/search.png'%}" alt=""></a>
+            <a href="login.html"><img loading="lazy" src="{% static 'Store/icons/person.png'%}" alt=""></a>
+            <a href="">
+                <img loading="lazy" src="{% static 'Store/icons/shopping_bag.png'%}" alt="">
+                {%if panier%}
+                    <div class="red-disc"></div>
+                {%endif%}
+            </a>
+            <a href=""><img loading="lazy" id="menu" src="{% static 'Store/icons/Menu.png'%}" alt=""></a>
+        </div>
+        <div class="banner">
+            <div class="ban-head"><img loading="lazy" id="croix" src="{% static 'Store/icons/croix.png'%}" alt=""></div>
+            <a href="{% url 'index'%}">Accueil</a>
+            <a href="{% url 'nouveautes'%}">Nouveautés</a>
+            <a href="{% url 'boutique' %}">Boutique</a>
+            <a href="{% url 'hommes' %}">Hommes</a>
+            <a href="{% url 'femmes'%}">Femmes</a>
+            <a href="{% url 'enfants' %}">Enfants</a>
+            <a href="{% url 'contact'%}">Nous contacter</a>
+            <a href="{% url 'register_store'%}">Rejoignez-nous</a>
+            <a href="{% url 'login_store'%}">Se Connecter</a>
+        </div>
+    </nav>
+    <!--Entete et navbar-->
+    <!-- Landing page -->
+    <section class="title">
+        <h1>Enfants</h1>
+    </section>
+    <section class="landing">
+        {%for item in landing_enfants_items%}
+        <img loading="lazy" src="{{item.item_image.url}}" alt="landing">
+        {%endfor%}
+    </section>
+
+    <section class="acc-text">
+        <p class="p1"> {{landing_enfants.section_title}} </p>
+        <p class="p2"> {{landing_enfants.section_slogan}}</p>
+        <button class="btq">Boutique</button>
+    </section>
+    <!-- Landing page -->
+
+    <!-- Trending -->
+    <section class="trending">
+        <h3 class="t-title">{{a_la_une.section_title}}</h3>
+        <div class="t-img-container">
+            {%for item in a_la_une_item%}
+            <div class="t-cont1">
+                <img loading="lazy" src="{{item.item_image.url}}" alt="">
+                <p class="p1">{{item.item_name}}</p>
+                <p class="p2">{{item.optional_text}}</p>
+                <button class="btq">Boutique</button>
+            </div>
+            {%endfor%}
+        </div>
+    </section>
+    <!-- Trending -->
+    <!-- Carroussel classique-->
+    <!--SECTION CARROUSEL-->
+    <section class="carrousel">
+        <p class="bt">{{car_classique.carrousel_title}}</p>
+        <div class="gallery-wrap">
+            <button id="backBtn">&lt;</button>
+            <div class="gallery">
+                {%for item in car_classique_items %}
+                <div class="card">
+                    <a href="{%url 'boutique'%}">
+                        <img src="{{item.car_item_image.url}}" loading="lazy" alt="{{item.car_item_name}}">
+                        <p>{{item.car_item_name}}</p>
+                    </a>
+                </div>
+                {%endfor%}
+
+            </div>
+            <button id="nextBtn">&gt;</button>
+        </div>
+    </section>
+    <!--SECTION CARROUSEL-->
+
+    <!--section par age-->
+    <section class="per-age">
+        <div class="p-car-header">
+            <h3>{{per_age.carrousel_title}}</h3>
+            <div class="car-btn">
+                <button class="b1"><img loading="lazy" src="{% static 'Store/icons/back.png'%}"></button>
+                <button class="b2"><img loading="lazy" src="{% static 'Store/icons/next.png'%}"></button>
+            </div>
+        </div>
+        <div class="p-wrapper">
+            {% for item in per_age_item%}
+            <div class="p-car-container">
+                <div class="p-card">
+                    <img src="{{item.car_item_image.url}}" loading="lazy" alt="">
+                    <p>{{item.car_item_name}}</p>
+                    <button class="btq">Boutique</button>
+                </div>
+            </div>
+            {%endfor%}
+        </div>
+    </section>
+    <!--section par age-->
+
+    <!-- populaire en ce moment -->
+    <section class="t-carroussel">
+        <div class="t-car-header">
+            <h3>{{car_pop.carrousel_title}}</h3>
+            <div class="car-btn">
+                <button class="b3"><img loading="lazy" src="{% static 'Store/icons/back.png'%}"></button>
+                <button class="b4"><img loading="lazy" src="{% static 'Store/icons/next.png'%}"></button>
+            </div>
+        </div>
+        <div class="t-wrapper">
+            {%for item in car_pop_item%}
+            <a href="{% url 'boutique' %}">
+                <div class="t-car-container">
+                    <div class="t-card">
+                        <img src="{{item.car_item_image.url}}" loading="lazy" alt="">
+                    </div>
+                    <h3>{{item.car_item_name}}</h3>
+                    <p class="price">{{item.car_item_description}}</p>
+                </div>
+            </a>
+            {%endfor%}
+        </div>
+    </section>
+    <!-- populaire en ce moment -->
+    <!--PIED DE PAGE-->
+    <footer>
+        <div class="footer-logo"><img loading="lazy" src="{% static 'Store/icons/logo.png'%}" alt=""></div>
+        <div class="footer-container">
+            <ul class="items">
+                <li><a href="">Trouver notre magasin</a></li>
+                <li><a href="{%url 'contact'%}">Aide</a></li>
+                <li><a href="{%url 'register_store'%}">Rejoignez-nous</a></li>
+                <li><a href="{%url 'login_store'%}">Se connecter</a></li>
+            </ul>
+        </div>
+        <p>©️ copyright MouneShop 2025. All right reserved.</p>
+    </footer>
+    <!--PIED DE PAGE-->
+    <script src="{% static 'Store/JS/script2.js'%}"></script>
+    <script src="{% static 'Store/JS/style-responsive.js'%}"></script>
+    <script>
+        let button_boutique = document.querySelectorAll(".btq")
+        button_boutique.forEach(btq => btq.addEventListener("click", (event)=>{
+            event.preventDefault()
+            location.href = "{%url 'boutique'%}"
+        }))
+    </script>
+</body>
+
+</html>
